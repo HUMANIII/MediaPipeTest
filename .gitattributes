@@ -1,0 +1,2 @@
+*.exe filter=lfs diff=lfs merge=lfs -text
+Assets/StreamingAssets/PoseServer.exe filter=lfs diff=lfs merge=lfs -text
