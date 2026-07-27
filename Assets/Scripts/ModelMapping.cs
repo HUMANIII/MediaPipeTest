@@ -37,7 +37,7 @@ public class ModelMapping : GeneralMapping
 
     public bool IsCalibrated { get; private set; }
     public bool IsCalibrationRunning => calibrationCoroutine != null;
-
+  
     private Vector3 leftHand;
     private Vector3 rightHand;
     private Vector3 leftFoot;
@@ -47,6 +47,12 @@ public class ModelMapping : GeneralMapping
     private Vector3 rightElbow;
     private Vector3 leftKnee;
     private Vector3 rightKnee;
+
+    private Vector3 headPosition;
+    private Quaternion headRotation;
+    private Vector3 bodyPosition;
+    private Quaternion hipsRotation;
+    private Quaternion spineRotation;
 
     //90줄 근처에서 말한 이유때문에 이것도 주석처리함
     // private float leftHandWeight;
@@ -81,12 +87,7 @@ public class ModelMapping : GeneralMapping
             : 1f;
 
         CalculateArms(points, t);
-
-        leftFoot  = Vector3.Lerp(leftFoot,  ToUnityPosition(points[27]), t);
-        rightFoot = Vector3.Lerp(rightFoot, ToUnityPosition(points[28]), t);
-
-        leftKnee  = Vector3.Lerp(leftKnee,  ToUnityPosition(points[25]), t);
-        rightKnee = Vector3.Lerp(rightKnee, ToUnityPosition(points[26]), t);
+        CalculateLegs(points, t);
 
         // 원래 그 감지 관련해서 그 감지 값을 기반으로 웨이틀르 줬는데 그렇게하면 전신 기준으로
         // 디버그가 어려워져서 그냥 안쓰게 됨 그러므로 주석으로 처리함 호옥시 나중에 필요할지도?
@@ -98,6 +99,7 @@ public class ModelMapping : GeneralMapping
         initialized = true;
     }
 
+    //잘 생각해보니 지금 팔다리 보정해주는데 이거 쓸데 없는데?
     #region 캘리브레이션용
     /// <summary>
     /// Unity UI Button의 OnClick에 연결할 메서드입니다.
@@ -120,7 +122,7 @@ public class ModelMapping : GeneralMapping
         }
 
         if (trackingOrigin == null)
-        {
+        { 
             Debug.LogError("Tracking Origin이 연결되지 않았습니다.");
             return;
         }
@@ -383,11 +385,73 @@ public class ModelMapping : GeneralMapping
         return Mathf.InverseLerp(minConfidence, 1f, confidence);
     }
 
+    /// <summary>
+    /// 주어진 HumanBodyBones로부터 상단, 중간, 끝단 Transform을 반환합니다.
+    /// </summary>
+    private (Transform upper, Transform lower, Transform end) GetLimbBones(
+        HumanBodyBones upperBone,
+        HumanBodyBones lowerBone,
+        HumanBodyBones endBone)
+    {
+        return (
+            animator.GetBoneTransform(upperBone),
+            animator.GetBoneTransform(lowerBone),
+            animator.GetBoneTransform(endBone)
+        );
+    }
+
+    /// <summary>
+    /// 상단-중간, 중간-끝단 세그먼트의 길이를 계산합니다.
+    /// </summary>
+    private (float upperLength, float lowerLength) GetLimbLengths(
+        Transform upper,
+        Transform lower,
+        Transform end)
+    {
+        float upperLength = Vector3.Distance(upper.position, lower.position);
+        float lowerLength = Vector3.Distance(lower.position, end.position);
+        return (upperLength, lowerLength);
+    }
+
+    /// <summary>
+    /// 추적 랜드마크로부터 사지의 끝 위치와 힌트 위치를 계산합니다.
+    /// </summary>
+    private (Vector3 endPosition, Vector3 hintPosition) CalculateLimbPositions(
+        Vector3 upperPosition,
+        Vector3 upperPoint,
+        Vector3 middlePoint,
+        Vector3 endPoint,
+        float upperLength,
+        float lowerLength)
+    {
+        // Directions
+        Vector3 upperDirection = ToUnityDirection(middlePoint - upperPoint);
+        Vector3 lowerDirection = ToUnityDirection(endPoint - middlePoint);
+
+        // Calculated positions
+        Vector3 calculatedMiddle = upperPosition + upperDirection * upperLength;
+        Vector3 calculatedEnd = calculatedMiddle + lowerDirection * lowerLength;
+
+        // Hint calculation
+        Vector3 limbVector = calculatedEnd - upperPosition;
+        Vector3 middleOnLimbLine = upperPosition + Vector3.Project(calculatedMiddle - upperPosition, limbVector);
+        Vector3 bendDirection = calculatedMiddle - middleOnLimbLine;
+
+        if (bendDirection.sqrMagnitude > 0.0001f)
+            bendDirection.Normalize();
+        else
+            bendDirection = trackingOrigin.forward;
+
+        Vector3 calculatedHint = calculatedMiddle + bendDirection * 0.25f;
+
+        return (calculatedEnd, calculatedHint);
+    }
+
     private void OnAnimatorIK(int layerIndex)
     {
         if (!initialized || animator == null)
             return;
-        
+
         //이거 좌우 반전임 - 에잉 귀차나 - 보니까 캐릭터가 나 바라보게 만들어서 그런거넹 ㅎㅎ
         //presence나 visibility로 필터를 한다고 해도 뭔가 뭔가임 물론 그게 정배이긴한데 테스트의 목적에서는 그냥 웨이트 1로 때리고 항시 확인하는게 맞는 듯
         SetGoal(AvatarIKGoal.LeftHand, leftHand, 1f);
@@ -402,6 +466,7 @@ public class ModelMapping : GeneralMapping
 
         SetHint(AvatarIKHint.LeftKnee, leftKnee, 1f);
         SetHint(AvatarIKHint.RightKnee, rightKnee, 1f);
+        
     }
 
     private void SetGoal(AvatarIKGoal goal, Vector3 position, float weight)
@@ -419,73 +484,37 @@ public class ModelMapping : GeneralMapping
     
     private void CalculateArms(LandmarkData[] points, float t)
     {
-        // Left arm bones
-        Transform leftUpperArm = animator.GetBoneTransform(HumanBodyBones.LeftUpperArm);
-        Transform leftLowerArm = animator.GetBoneTransform(HumanBodyBones.LeftLowerArm);
-        Transform leftHandBone = animator.GetBoneTransform(HumanBodyBones.LeftHand);
+        // Left arm
+        var (leftUpper, leftLower, leftEnd) = GetLimbBones(
+            HumanBodyBones.LeftUpperArm,
+            HumanBodyBones.LeftLowerArm,
+            HumanBodyBones.LeftHand
+        );
+        var (leftUpperLength, leftLowerLength) = GetLimbLengths(leftUpper, leftLower, leftEnd);
+        var (leftCalculatedHand, leftCalculatedHint) = CalculateLimbPositions(
+            leftUpper.position,
+            RawVector(points[11]),
+            RawVector(points[13]),
+            RawVector(points[15]),
+            leftUpperLength,
+            leftLowerLength
+        );
 
-        // Right arm bones
-        Transform rightUpperArm = animator.GetBoneTransform(HumanBodyBones.RightUpperArm);
-        Transform rightLowerArm = animator.GetBoneTransform(HumanBodyBones.RightLowerArm);
-        Transform rightHandBone = animator.GetBoneTransform(HumanBodyBones.RightHand);
-
-        // Left arm lengths
-        float leftUpperLength = Vector3.Distance(leftUpperArm.position, leftLowerArm.position);
-        float leftLowerLength = Vector3.Distance(leftLowerArm.position, leftHandBone.position);
-
-        // Right arm lengths
-        float rightUpperLength = Vector3.Distance(rightUpperArm.position, rightLowerArm.position);
-        float rightLowerLength = Vector3.Distance(rightLowerArm.position, rightHandBone.position);
-
-        // Left arm points (좌우 바뀌어서)
-        Vector3 leftShoulderPoint = RawVector(points[11]);
-        Vector3 leftElbowPoint = RawVector(points[13]);
-        Vector3 leftWristPoint = RawVector(points[15]);
-
-        // Right arm points (좌우 바뀌어서)
-        Vector3 rightShoulderPoint = RawVector(points[12]);
-        Vector3 rightElbowPoint = RawVector(points[14]);
-        Vector3 rightWristPoint = RawVector(points[16]);
-
-        // Left arm directions
-        Vector3 leftUpperDirection = ToUnityDirection(leftElbowPoint - leftShoulderPoint);
-        Vector3 leftLowerDirection = ToUnityDirection(leftWristPoint - leftElbowPoint);
-
-        // Right arm directions
-        Vector3 rightUpperDirection = ToUnityDirection(rightElbowPoint - rightShoulderPoint);
-        Vector3 rightLowerDirection = ToUnityDirection(rightWristPoint - rightElbowPoint);
-
-        // Left arm calculated positions
-        Vector3 leftCalculatedElbow = leftUpperArm.position + leftUpperDirection * leftUpperLength;
-        Vector3 leftCalculatedHand = leftCalculatedElbow + leftLowerDirection * leftLowerLength;
-
-        // Right arm calculated positions
-        Vector3 rightCalculatedElbow = rightUpperArm.position + rightUpperDirection * rightUpperLength;
-        Vector3 rightCalculatedHand = rightCalculatedElbow + rightLowerDirection * rightLowerLength;
-
-        // Left arm hint calculation
-        Vector3 leftArmVector = leftCalculatedHand - leftUpperArm.position;
-        Vector3 leftElbowOnArmLine = leftUpperArm.position + Vector3.Project(leftCalculatedElbow - leftUpperArm.position, leftArmVector);
-        Vector3 leftBendDirection = leftCalculatedElbow - leftElbowOnArmLine;
-
-        if (leftBendDirection.sqrMagnitude > 0.0001f)
-            leftBendDirection.Normalize();
-        else
-            leftBendDirection = trackingOrigin.forward;
-
-        Vector3 leftCalculatedHint = leftCalculatedElbow + leftBendDirection * 0.25f;
-
-        // Right arm hint calculation
-        Vector3 rightArmVector = rightCalculatedHand - rightUpperArm.position;
-        Vector3 rightElbowOnArmLine = rightUpperArm.position + Vector3.Project(rightCalculatedElbow - rightUpperArm.position, rightArmVector);
-        Vector3 rightBendDirection = rightCalculatedElbow - rightElbowOnArmLine;
-
-        if (rightBendDirection.sqrMagnitude > 0.0001f)
-            rightBendDirection.Normalize();
-        else
-            rightBendDirection = trackingOrigin.forward;
-
-        Vector3 rightCalculatedHint = rightCalculatedElbow + rightBendDirection * 0.25f;
+        // Right arm
+        var (rightUpper, rightLower, rightEnd) = GetLimbBones(
+            HumanBodyBones.RightUpperArm,
+            HumanBodyBones.RightLowerArm,
+            HumanBodyBones.RightHand
+        );
+        var (rightUpperLength, rightLowerLength) = GetLimbLengths(rightUpper, rightLower, rightEnd);
+        var (rightCalculatedHand, rightCalculatedHint) = CalculateLimbPositions(
+            rightUpper.position,
+            RawVector(points[12]),
+            RawVector(points[14]),
+            RawVector(points[16]),
+            rightUpperLength,
+            rightLowerLength
+        );
 
         // Update both arms
         leftHand = Vector3.Lerp(leftHand, leftCalculatedHand, t);
@@ -495,4 +524,44 @@ public class ModelMapping : GeneralMapping
     }
 
     
+    private void CalculateLegs(LandmarkData[] points, float t)
+    {
+        // Left leg
+        var (leftUpper, leftLower, leftEnd) = GetLimbBones(
+            HumanBodyBones.LeftUpperLeg,
+            HumanBodyBones.LeftLowerLeg,
+            HumanBodyBones.LeftFoot
+        );
+        var (leftUpperLength, leftLowerLength) = GetLimbLengths(leftUpper, leftLower, leftEnd);
+        var (leftCalculatedFoot, leftCalculatedHint) = CalculateLimbPositions(
+            leftUpper.position,
+            RawVector(points[23]),
+            RawVector(points[25]),
+            RawVector(points[27]),
+            leftUpperLength,
+            leftLowerLength
+        );
+
+        // Right leg
+        var (rightUpper, rightLower, rightEnd) = GetLimbBones(
+            HumanBodyBones.RightUpperLeg,
+            HumanBodyBones.RightLowerLeg,
+            HumanBodyBones.RightFoot
+        );
+        var (rightUpperLength, rightLowerLength) = GetLimbLengths(rightUpper, rightLower, rightEnd);
+        var (rightCalculatedFoot, rightCalculatedHint) = CalculateLimbPositions(
+            rightUpper.position,
+            RawVector(points[24]),
+            RawVector(points[26]),
+            RawVector(points[28]),
+            rightUpperLength,
+            rightLowerLength
+        );
+
+        // Update both legs
+        leftFoot = Vector3.Lerp(leftFoot, leftCalculatedFoot, t);
+        leftKnee = Vector3.Lerp(leftKnee, leftCalculatedHint, t);
+        rightFoot = Vector3.Lerp(rightFoot, rightCalculatedFoot, t);
+        rightKnee = Vector3.Lerp(rightKnee, rightCalculatedHint, t);
+    }
 }
