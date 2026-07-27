@@ -107,7 +107,13 @@ public class LandMarkDataReceiver : MonoBehaviour
         catch (Exception e)
         {
             Debug.LogError(e);
-            await TryConnectToServer();
+            if (isReceiving &&
+                cts != null &&
+                !cts.IsCancellationRequested &&
+                await TryConnectToServer())
+            {
+                _ = WebSocketReceive();
+            }
         }
     }
     
