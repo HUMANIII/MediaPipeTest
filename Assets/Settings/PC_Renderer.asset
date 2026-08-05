@@ -15,11 +15,12 @@ MonoBehaviour:
   m_Active: 1
   settings:
     debugMode: 0
-    debugMaterial: {fileID: 2100000, guid: 7c2ce02413c401e43992f65da92d5d1d, type: 2}
+    detectorMaterial: {fileID: 2100000, guid: 7c2ce02413c401e43992f65da92d5d1d, type: 2}
     outlineTargetLayers:
       serializedVersion: 2
       m_Bits: 64
-    outlineMaterial: {fileID: 0}
+    outlineMaterial: {fileID: 2100000, guid: 9f977ace9727a5f49862864c7914c073, type: 2}
+    debugMaterial: {fileID: 2100000, guid: 6cdfb12b538da6a498f8424faf653481, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
