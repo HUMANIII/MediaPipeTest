@@ -1,11 +1,17 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
 public class RenderFeatureController : MonoBehaviour
 {
     [SerializeField]
     private ScriptableRendererFeature[] RenderFeatures;
-    
+
+    private void Awake()
+    {
+        SetActiveRenderFeature(false);
+    }
+
     public void SetActiveRenderFeature(bool active)
     {
         foreach (var feature in RenderFeatures)
