@@ -9,6 +9,8 @@ public class HenshinInvoker : MonoBehaviour
     private Material henshinMaterial;
     [SerializeField]
     private RenderFeatureController renderFeatureController;
+    [SerializeField]
+    private CinemachineTweenEffects cinemachineTweenEffects;
     
     
     [SerializeField]
@@ -22,6 +24,7 @@ public class HenshinInvoker : MonoBehaviour
     
     private List<Renderer> renderers = new();
     private List<Material[]> materials = new();
+    private Sequence activeHenshinSequence;
     
     private void Awake()
     {
@@ -32,6 +35,13 @@ public class HenshinInvoker : MonoBehaviour
 
     public void InvokeHenshin()
     {
+        if (activeHenshinSequence != null && activeHenshinSequence.IsActive())
+        {
+            activeHenshinSequence.Kill(false);
+            // 필요 시 CinemachineTweenEffects에 카메라 원상복구 기능을 추가한 뒤 호출합니다.
+            // cinemachineTweenEffects.ResetCameraImmediately();
+        }
+
         //외각선 켜기
         renderFeatureController.SetActiveRenderFeature(true);
         //내부 렌더러 바꾸기
@@ -55,17 +65,45 @@ public class HenshinInvoker : MonoBehaviour
         
         var seq = DOTween.Sequence();
         seq.AppendInterval(0.5f);
+        cinemachineTweenEffects.AppendFullBodyOrbit(seq);
 
         foreach (var henshinObject in HenshinObjects)
         {
+            cinemachineTweenEffects.AppendCameraFocus(seq, henshinObject.transform, 0.5f, 0.3f);
             PopAndShow(seq, henshinObject, 0.2f, 0.5f);
         }
 
         seq.AppendCallback(CancelHenshin);
+        cinemachineTweenEffects.SetDefaultCamera(seq);
         seq.Play();
     }
     
     public void CancelHenshin()
+    {
+        Sequence sequence = activeHenshinSequence;
+        activeHenshinSequence = null;
+
+        if (sequence != null && sequence.IsActive())
+        {
+            sequence.Kill(false);
+        }
+
+        // 필요 시 CinemachineTweenEffects에 카메라 원상복구 기능을 추가한 뒤 호출합니다.
+        // cinemachineTweenEffects.ResetCameraImmediately();
+        RestoreHenshinEffect();
+    }
+
+    private void CompleteHenshin(Sequence sequence)
+    {
+        if (ReferenceEquals(activeHenshinSequence, sequence))
+        {
+            activeHenshinSequence = null;
+        }
+
+        RestoreHenshinEffect();
+    }
+
+    private void RestoreHenshinEffect()
     {
         renderFeatureController.SetActiveRenderFeature(false);
         for (var i = 0; i < renderers.Count; i++)
@@ -76,9 +114,12 @@ public class HenshinInvoker : MonoBehaviour
     
     private void PopAndShow(Sequence seq, GameObject obj, float duration, float delay = 0)
     {
-        obj.SetActive(true);
         var originScale = obj.transform.localScale;
-        obj.transform.localScale = Vector3.zero;
+        seq.AppendCallback(() =>
+        {
+            obj.SetActive(true);
+            obj.transform.localScale = Vector3.zero;
+        });
         seq.Append(obj.transform.DOScale(originScale, duration).SetEase(Ease.OutQuad));
         seq.AppendInterval(delay);
     }

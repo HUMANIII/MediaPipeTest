@@ -308,6 +308,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5174086275303636996, guid: 2fb38365243c5ba4abb52d1814dc6359, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5852310899955171005, guid: 2fb38365243c5ba4abb52d1814dc6359, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -347,6 +351,22 @@ PrefabInstance:
     - target: {fileID: 7497375452916174029, guid: 2fb38365243c5ba4abb52d1814dc6359, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7653823296802953635, guid: 2fb38365243c5ba4abb52d1814dc6359, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 7653823296802953635, guid: 2fb38365243c5ba4abb52d1814dc6359, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 7653823296802953635, guid: 2fb38365243c5ba4abb52d1814dc6359, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 7653823296802953635, guid: 2fb38365243c5ba4abb52d1814dc6359, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7822191995301121835, guid: 2fb38365243c5ba4abb52d1814dc6359, type: 3}
       propertyPath: m_Layer
@@ -450,8 +470,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HenshinInvoker
   henshinMaterial: {fileID: 2100000, guid: 1e4fa986e1fcf5342aaf76cfbc09cd8b, type: 2}
   renderFeatureController: {fileID: 0}
-  PrevHenshinObjects: []
-  HenshinObjects: []
+  cinemachineTweenEffects: {fileID: 0}
+  SpecialMaterials:
+  - {fileID: 2100000, guid: 023452b84affa6f43a8feea0e1c55499, type: 2}
+  - {fileID: 2100000, guid: 02b619845fcb6e741b4be7e71e36c491, type: 2}
+  - {fileID: 2100000, guid: b97b55ed446d8ed48acc18d42edf2de0, type: 2}
+  - {fileID: 2100000, guid: aa86a0f3e62852142bfc3a5d4cd7a828, type: 2}
+  - {fileID: 2100000, guid: 29c9dd3707158b2448cc0bdf81c33ce8, type: 2}
+  PrevHenshinObjects:
+  - {fileID: 5852068396325332215}
+  - {fileID: 6988599438022533993}
+  HenshinObjects:
+  - {fileID: 6510918321836999591}
+  - {fileID: 4540826352705116893}
+  - {fileID: 1411394475396500427}
 --- !u!1 &4540826352705116893 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7478733339858699856, guid: 2fb38365243c5ba4abb52d1814dc6359, type: 3}
