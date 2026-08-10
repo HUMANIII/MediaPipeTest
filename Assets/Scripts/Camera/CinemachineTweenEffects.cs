@@ -265,7 +265,7 @@ public sealed class CinemachineTweenEffects : MonoBehaviour
     
     public void SetDefaultCamera(Sequence sequence)
     {
-        sequence.AppendCallback(() => PrioritizeCamera(defaultCamera));
+        sequence.AppendCallback(() => PrioritizeCamera(defaultCamera));  
     }
 
     // 필요 시 복구할 후보:

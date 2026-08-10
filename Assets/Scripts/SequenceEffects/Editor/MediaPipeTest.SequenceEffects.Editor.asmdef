@@ -1,0 +1,18 @@
+{
+  "name": "MediaPipeTest.SequenceEffects.Editor",
+  "rootNamespace": "MediaPipeTest.SequenceEffects.Editor",
+  "references": [
+    "MediaPipeTest.SequenceEffects"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}
