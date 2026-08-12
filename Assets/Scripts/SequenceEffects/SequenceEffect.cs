@@ -28,14 +28,8 @@ namespace MediaPipeTest.SequenceEffects
     [Serializable]
     public abstract class SequenceEffect
     {
-        public abstract void AppendTo(
-            Sequence sequence,
-            SequenceEffectContext context);
-
-        public abstract void Validate(
-            SequenceEffectValidationContext context,
-            string path,
-            List<string> errors);
+        public abstract void AppendTo(Sequence sequence, SequenceEffectContext context);
+        public abstract void Validate(SequenceEffectValidationContext context, string path, List<string> errors);
 
         public virtual void CollectCameras(
             ICollection<CinemachineCamera> cameras)

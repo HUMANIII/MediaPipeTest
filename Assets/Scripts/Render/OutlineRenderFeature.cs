@@ -74,9 +74,7 @@ public class OutlineRenderFeature : ScriptableRendererFeature
             TextureHandle maskHandle;
             var resourceData = frameData.Get<UniversalResourceData>();
             
-                
             const string detectorRenderPass = "DetectorRenderPass";
-
             // This adds a raster render pass to the graph, specifying the name and the data type that will be passed to the ExecutePass function.
             // 이것은 그래프에 래스터 렌더 패스를 추가하며, ExecutePass 함수에 전달될 이름과 데이터 타입을 지정합니다.
             using (var builder = renderGraph.AddRasterRenderPass<DetectorPassData>(detectorRenderPass, out var passData))
