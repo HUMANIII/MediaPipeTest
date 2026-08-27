@@ -1741,35 +1741,12 @@ MonoBehaviour:
       m_RotationOrder: 4
   onInitialize:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 169373518}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
   onCompleted:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 169373518}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   effects:
+  - rid: 4909447536964534347
   - rid: 4909447176277459060
   - rid: 4909447176277459061
   references:
@@ -1815,6 +1792,10 @@ MonoBehaviour:
         duration: 0.5
         delayAfterPop: 0.2
         ease: 32
+    - rid: 4909447536964534347
+      type: {class: VFX, ns: MediaPipeTest.SequenceEffects, asm: MediaPipeTest.SequenceEffects}
+      data:
+        visualEffect: {fileID: 169373520}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
