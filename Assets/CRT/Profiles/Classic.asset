@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e707dfe567776e42bf906eda3af5765, type: 3}
+  m_Name: Classic
+  m_EditorClassIdentifier: MediaPipeTest.CRT::MediaPipeTest.CRT.CrtProfile
+  settings:
+    rgbDensity: 240
+    rgbStrength: 0.35
+    scanlineCount: 180
+    scanlineWidth: 0.35
+    scanlineStrength: 0.3
+    virtualResolution: {x: 640, y: 480}
+    pixelation: 0
+    curvature: 0.08
+    vignette: 0.25
+    vignetteRadius: 0
+    vignetteSoftness: 1
+    monochrome: 1
+    monoTint: {r: 0.16653156, g: 1, b: 0, a: 1}
+    brightness: 1.12
+    screenRect: {x: 0, y: 0, z: 1, w: 1}
+    effectMask: {fileID: 0}

@@ -1,0 +1,6 @@
+{
+  "name": "MediaPipeTest.CRT.Editor",
+  "rootNamespace": "MediaPipeTest.CRT.Editor",
+  "references": ["MediaPipeTest.CRT", "Unity.RenderPipelines.Universal.Runtime", "Unity.RenderPipelines.Core.Runtime", "Unity.ugui"],
+  "includePlatforms": ["Editor"]
+}

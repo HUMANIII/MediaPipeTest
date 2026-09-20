@@ -1,0 +1,226 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!29 &1
+OcclusionCullingSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_OcclusionBakeSettings:
+    smallestOccluder: 5
+    smallestHole: 0.25
+    backfaceThreshold: 100
+  m_SceneGUID: 00000000000000000000000000000000
+  m_OcclusionCullingData: {fileID: 0}
+--- !u!104 &2
+RenderSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 10
+  m_Fog: 0
+  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogMode: 3
+  m_FogDensity: 0.01
+  m_LinearFogStart: 0
+  m_LinearFogEnd: 300
+  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
+  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_AmbientIntensity: 1
+  m_AmbientMode: 0
+  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_HaloStrength: 0.5
+  m_FlareStrength: 1
+  m_FlareFadeSpeed: 3
+  m_HaloTexture: {fileID: 0}
+  m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
+  m_DefaultReflectionMode: 0
+  m_DefaultReflectionResolution: 128
+  m_ReflectionBounces: 1
+  m_ReflectionIntensity: 1
+  m_CustomReflection: {fileID: 0}
+  m_Sun: {fileID: 0}
+  m_UseRadianceAmbientProbe: 0
+--- !u!157 &3
+LightmapSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
+  m_GISettings:
+    serializedVersion: 2
+    m_BounceScale: 1
+    m_IndirectOutputScale: 1
+    m_AlbedoBoost: 1
+    m_EnvironmentLightingMode: 0
+    m_EnableBakedLightmaps: 1
+    m_EnableRealtimeLightmaps: 0
+  m_LightmapEditorSettings:
+    serializedVersion: 12
+    m_Resolution: 2
+    m_BakeResolution: 40
+    m_AtlasSize: 1024
+    m_AO: 0
+    m_AOMaxDistance: 1
+    m_CompAOExponent: 1
+    m_CompAOExponentDirect: 0
+    m_ExtractAmbientOcclusion: 0
+    m_Padding: 2
+    m_LightmapParameters: {fileID: 0}
+    m_LightmapsBakeMode: 1
+    m_TextureCompression: 1
+    m_ReflectionCompression: 2
+    m_MixedBakeMode: 2
+    m_BakeBackend: 2
+    m_PVRSampling: 1
+    m_PVRDirectSampleCount: 32
+    m_PVRSampleCount: 512
+    m_PVRBounces: 2
+    m_PVREnvironmentSampleCount: 256
+    m_PVREnvironmentReferencePointCount: 2048
+    m_PVRFilteringMode: 1
+    m_PVRDenoiserTypeDirect: 1
+    m_PVRDenoiserTypeIndirect: 1
+    m_PVRDenoiserTypeAO: 1
+    m_PVRFilterTypeDirect: 0
+    m_PVRFilterTypeIndirect: 0
+    m_PVRFilterTypeAO: 0
+    m_PVREnvironmentMIS: 1
+    m_PVRCulling: 1
+    m_PVRFilteringGaussRadiusDirect: 1
+    m_PVRFilteringGaussRadiusIndirect: 1
+    m_PVRFilteringGaussRadiusAO: 1
+    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+    m_PVRFilteringAtrousPositionSigmaIndirect: 2
+    m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ExportTrainingData: 0
+    m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
+  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
+  m_LightingSettings: {fileID: 0}
+--- !u!196 &4
+NavMeshSettings:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_BuildSettings:
+    serializedVersion: 3
+    agentTypeID: 0
+    agentRadius: 0.5
+    agentHeight: 2
+    agentSlope: 45
+    agentClimb: 0.4
+    ledgeDropHeight: 0
+    maxJumpAcrossDistance: 0
+    minRegionArea: 2
+    manualCellSize: 0
+    cellSize: 0.16666667
+    manualTileSize: 0
+    tileSize: 256
+    buildHeightMesh: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
+    debug:
+      m_Flags: 0
+  m_NavMeshData: {fileID: 0}
+--- !u!1 &1435245082
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1435245084}
+  - component: {fileID: 1435245083}
+  m_Layer: 0
+  m_Name: CRT Playground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1435245083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435245082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de96b945b637b0a4bb1ded694b63655c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MediaPipeTest.CRT::MediaPipeTest.CRT.CrtDemo
+  surfaceMaterial: {fileID: 2100000, guid: 56a27b41c41b20e499ad510a18a677ff, type: 2}
+  spriteMaterial: {fileID: 2100000, guid: 6ae71cef5d3ae714291135a47258373d, type: 2}
+  canvasMaterial: {fileID: 2100000, guid: e937329d56899c24e9be840cf38089f1, type: 2}
+  fullscreenMaterial: {fileID: 2100000, guid: ae905d26dc9350f40a776e7b12f9f975, type: 2}
+  fullscreenFeature: {fileID: -5354021600480552598, guid: a4af758b5ba3db941af9b44ba73097eb, type: 2}
+  pipeline: {fileID: 11400000, guid: 4b83569d67af61e458304325a23e5dfd, type: 2}
+  rendererIndex: 1
+  testImage: {fileID: 2800000, guid: 0c71511e21c13734fba7148be1ed5552, type: 3}
+  halfMask: {fileID: 2800000, guid: a9caf801e6aaf904e8b31013695f5f72, type: 3}
+  screenShape: {fileID: 21300000, guid: 4980b45bf89fc6942921bd2c8452b7b9, type: 3}
+  testVideo: {fileID: 32900000, guid: 9b6b757c05323504daa1be20f99b3fdd, type: 3}
+  presets:
+  - {fileID: 11400000, guid: 3d630b123cc86bb4aa8ec49bd8b91110, type: 2}
+  - {fileID: 11400000, guid: 8776161eea12c0649beadf9a69e56430, type: 2}
+  - {fileID: 11400000, guid: 123230cfe7935924b96c1ee6aeb710b9, type: 2}
+  - {fileID: 11400000, guid: 4cbc9eb182007cd4cacd76540affd3d6, type: 2}
+  selectedPreset: 0
+  settings:
+    rgbDensity: 240
+    rgbStrength: 0.35
+    scanlineCount: 180
+    scanlineWidth: 0.35
+    scanlineStrength: 0.3
+    virtualResolution: {x: 640, y: 360}
+    pixelation: 0
+    curvature: 0.08
+    vignette: 0.25
+    vignetteRadius: 0
+    vignetteSoftness: 1
+    monochrome: 0
+    monoTint: {r: 1, g: 1, b: 1, a: 1}
+    brightness: 1.12
+    screenRect: {x: 0, y: 0, z: 1, w: 1}
+    effectMask: {fileID: 0}
+  fullscreenSettings:
+    rgbDensity: 240
+    rgbStrength: 0.35
+    scanlineCount: 180
+    scanlineWidth: 0.35
+    scanlineStrength: 0.3
+    virtualResolution: {x: 640, y: 360}
+    pixelation: 0
+    curvature: 0.08
+    vignette: 0.25
+    vignetteRadius: 0
+    vignetteSoftness: 1
+    monochrome: 0
+    monoTint: {r: 1, g: 1, b: 1, a: 1}
+    brightness: 1.12
+    screenRect: {x: 0, y: 0, z: 1, w: 1}
+    effectMask: {fileID: 0}
+  mode: 0
+  original: 0
+  useVideo: 1
+  includeUI: 0
+  partial: 0
+--- !u!4 &1435245084
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435245082}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 1435245084}
