@@ -1,0 +1,63 @@
+{
+  "sample_rate": 44100,
+  "seconds": 8,
+  "channels": 1,
+  "format": "PCM signed 16-bit WAV",
+  "step_times_seconds": [
+    0.45,
+    1.0,
+    1.55,
+    2.1,
+    2.6500000000000004,
+    3.2,
+    3.7500000000000004,
+    4.300000000000001,
+    4.8500000000000005,
+    5.4,
+    5.95,
+    6.500000000000001,
+    7.050000000000001
+  ],
+  "step_count": 13,
+  "interval_seconds": 0.55,
+  "target_rms_dbfs": -26.730750930023564,
+  "synthesis_seed": 8021,
+  "crt": {
+    "high_pass_hz": 250,
+    "low_pass_hz": 3500,
+    "final_low_pass_hz": 4200,
+    "saturation_wet_mix": 0.2,
+    "saturation_threshold": 0.24,
+    "hiss_rms_before_output_matching": 0.00125
+  },
+  "outputs": {
+    "A_Recorded_Original.wav": {
+      "rms_dbfs": -26.730750930023564,
+      "peak_dbfs": -3.6728360308279036,
+      "sha256": "e362e90538676594ce86e5f16a52396773bf4d7454841f982805478184f70600"
+    },
+    "A_Recorded_CRT.wav": {
+      "rms_dbfs": -26.730750930023564,
+      "peak_dbfs": -3.5486465121763193,
+      "sha256": "1b60fb2dcecc140140d72eb0d06279f3c603554b1d3979858d1b9b7747a68a6e"
+    },
+    "B_Synthesized_Original.wav": {
+      "rms_dbfs": -26.730750930023564,
+      "peak_dbfs": -1.938200260161128,
+      "sha256": "6c877545c07e73d2264371c87b857870926bb52ca9dd39cf7075c008b9155134"
+    },
+    "B_Synthesized_CRT.wav": {
+      "rms_dbfs": -26.730750930023564,
+      "peak_dbfs": -2.629760367725524,
+      "sha256": "c17369da2e08e08d79bd2faf31064464f03a90a1254bba5ec55bfb1c9707b903"
+    }
+  },
+  "sources": {
+    "Fantozzi-StoneL1.flac": "7cfa4a2f500ae2bd19a961022296611d837c34ca2e556fe68deb692388f49971",
+    "Fantozzi-StoneL2.flac": "dcbd6be44af4b3206daa36c5398035ca527bb057c51ce00482b9ca6356be2468",
+    "Fantozzi-StoneL3.flac": "37a25f4254cf8f2e56d271912b0569f3bb15c57bf3fde9de492466eb23853b0d",
+    "Fantozzi-StoneR1.flac": "7073bddd2e3ba432e15a83844180c0ebc52835c2c6bab0fa902ee5952499c729",
+    "Fantozzi-StoneR2.flac": "d66330b4a32e93b0dfdcb8c53667654de8702a0fa48b2d06c48d94dc66b3e1cc",
+    "Fantozzi-StoneR3.flac": "b98f2c4b932242739ce8687206f7eb3313ce30afd4af7b7e148507c5cbd26787"
+  }
+}

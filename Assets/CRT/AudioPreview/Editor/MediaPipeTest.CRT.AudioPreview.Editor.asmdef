@@ -1,0 +1,6 @@
+{
+  "name": "MediaPipeTest.CRT.AudioPreview.Editor",
+  "rootNamespace": "MediaPipeTest.CRT.AudioPreview",
+  "includePlatforms": ["Editor"],
+  "references": ["MediaPipeTest.CRT.Audio"]
+}

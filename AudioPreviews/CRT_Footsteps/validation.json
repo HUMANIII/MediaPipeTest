@@ -1,0 +1,210 @@
+{
+  "passed": true,
+  "total": 32,
+  "passed_count": 32,
+  "metrics": {
+    "A_Recorded_Original.wav": {
+      "rms_dbfs": -26.731020100916734,
+      "peak_dbfs": -3.673166966894402,
+      "reconstructed_peak_dbfs": -3.673166966894402,
+      "background_rms_dbfs": -300.0,
+      "outside_speaker_band_fraction": 0.09364910518281135
+    },
+    "A_Recorded_CRT.wav": {
+      "rms_dbfs": -26.731011240842246,
+      "peak_dbfs": -3.549037676735154,
+      "reconstructed_peak_dbfs": -3.5237116040949656,
+      "background_rms_dbfs": -56.74963567743233,
+      "outside_speaker_band_fraction": 0.0038015360200874403
+    },
+    "B_Synthesized_Original.wav": {
+      "rms_dbfs": -26.73101969366423,
+      "peak_dbfs": -1.9383327973301165,
+      "reconstructed_peak_dbfs": -1.9383327973301165,
+      "background_rms_dbfs": -300.0,
+      "outside_speaker_band_fraction": 0.07818509710144173
+    },
+    "B_Synthesized_CRT.wav": {
+      "rms_dbfs": -26.731021431554566,
+      "peak_dbfs": -2.6301792954702012,
+      "reconstructed_peak_dbfs": -2.57964236494487,
+      "background_rms_dbfs": -54.70416446526244,
+      "outside_speaker_band_fraction": 0.0016117355218975304
+    }
+  },
+  "checks": [
+    {
+      "name": "A_Recorded_Original.wav PCM decodes completely",
+      "passed": true,
+      "evidence": 352800
+    },
+    {
+      "name": "A_Recorded_Original.wav exactly eight seconds at 44100 Hz",
+      "passed": true,
+      "evidence": 8.0
+    },
+    {
+      "name": "A_Recorded_Original.wav no full-scale clipping",
+      "passed": true,
+      "evidence": 0.6551513671875
+    },
+    {
+      "name": "A_Recorded_Original.wav reconstructed peak has headroom",
+      "passed": true,
+      "evidence": -3.673166966894402
+    },
+    {
+      "name": "A_Recorded_Original.wav file endpoints fade to silence",
+      "passed": true,
+      "evidence": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "A_Recorded_Original.wav all thirteen footsteps begin on the shared schedule",
+      "passed": true,
+      "evidence": 0.040910741517755554
+    },
+    {
+      "name": "A_Recorded_CRT.wav PCM decodes completely",
+      "passed": true,
+      "evidence": 352800
+    },
+    {
+      "name": "A_Recorded_CRT.wav exactly eight seconds at 44100 Hz",
+      "passed": true,
+      "evidence": 8.0
+    },
+    {
+      "name": "A_Recorded_CRT.wav no full-scale clipping",
+      "passed": true,
+      "evidence": 0.664581298828125
+    },
+    {
+      "name": "A_Recorded_CRT.wav reconstructed peak has headroom",
+      "passed": true,
+      "evidence": -3.5237116040949656
+    },
+    {
+      "name": "A_Recorded_CRT.wav file endpoints fade to silence",
+      "passed": true,
+      "evidence": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "A_Recorded_CRT.wav all thirteen footsteps begin on the shared schedule",
+      "passed": true,
+      "evidence": 0.03179461487486374
+    },
+    {
+      "name": "B_Synthesized_Original.wav PCM decodes completely",
+      "passed": true,
+      "evidence": 352800
+    },
+    {
+      "name": "B_Synthesized_Original.wav exactly eight seconds at 44100 Hz",
+      "passed": true,
+      "evidence": 8.0
+    },
+    {
+      "name": "B_Synthesized_Original.wav no full-scale clipping",
+      "passed": true,
+      "evidence": 0.79998779296875
+    },
+    {
+      "name": "B_Synthesized_Original.wav reconstructed peak has headroom",
+      "passed": true,
+      "evidence": -1.9383327973301165
+    },
+    {
+      "name": "B_Synthesized_Original.wav file endpoints fade to silence",
+      "passed": true,
+      "evidence": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "B_Synthesized_Original.wav all thirteen footsteps begin on the shared schedule",
+      "passed": true,
+      "evidence": 0.14340340945309768
+    },
+    {
+      "name": "B_Synthesized_CRT.wav PCM decodes completely",
+      "passed": true,
+      "evidence": 352800
+    },
+    {
+      "name": "B_Synthesized_CRT.wav exactly eight seconds at 44100 Hz",
+      "passed": true,
+      "evidence": 8.0
+    },
+    {
+      "name": "B_Synthesized_CRT.wav no full-scale clipping",
+      "passed": true,
+      "evidence": 0.738739013671875
+    },
+    {
+      "name": "B_Synthesized_CRT.wav reconstructed peak has headroom",
+      "passed": true,
+      "evidence": -2.57964236494487
+    },
+    {
+      "name": "B_Synthesized_CRT.wav file endpoints fade to silence",
+      "passed": true,
+      "evidence": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "B_Synthesized_CRT.wav all thirteen footsteps begin on the shared schedule",
+      "passed": true,
+      "evidence": 0.14492447112703127
+    },
+    {
+      "name": "four RMS levels matched within 0.05 dB",
+      "passed": true,
+      "evidence": 1.0190712320223838e-05
+    },
+    {
+      "name": "A_Recorded CRT reduces energy outside speaker band",
+      "passed": true,
+      "evidence": 0.04059340463175281
+    },
+    {
+      "name": "A_Recorded CRT has a low background hiss",
+      "passed": true,
+      "evidence": -56.74963567743233
+    },
+    {
+      "name": "A_Recorded original lead-in is silent",
+      "passed": true,
+      "evidence": -300.0
+    },
+    {
+      "name": "B_Synthesized CRT reduces energy outside speaker band",
+      "passed": true,
+      "evidence": 0.020614357232381184
+    },
+    {
+      "name": "B_Synthesized CRT has a low background hiss",
+      "passed": true,
+      "evidence": -54.70416446526244
+    },
+    {
+      "name": "B_Synthesized original lead-in is silent",
+      "passed": true,
+      "evidence": -300.0
+    },
+    {
+      "name": "A and B are distinct source signals",
+      "passed": true,
+      "evidence": -0.0154670830540301
+    }
+  ],
+  "limits": "Decoded PCM, numerical signal checks and shared event schedule verified. Subjective listening approval remains with the user."
+}

@@ -1,0 +1,78 @@
+// Copied only into the isolated validation project; never imported into the user's project.
+using System;
+using System.IO;
+using System.Linq;
+using UnityEditor;
+using UnityEngine;
+
+namespace MediaPipeTest.CRT.AudioPreview
+{
+    [InitializeOnLoad]
+    public static class AudioRefinementHarness
+    {
+        const string Pending = "CRT.AudioRefinement.AwaitingReload";
+        const string Root = "Logs/CRTAudioPreview/";
+        static AudioRefinementHarness()
+        {
+            if (SessionState.GetBool(Pending, false)) EditorApplication.delayCall += FinishReload;
+        }
+        public static async void Run()
+        {
+            try
+            {
+                await CrtAudioPreviewValidation.RunAsync();
+                bool controls = await CrtAudioControlsValidation.RunAsync();
+                bool engine = File.ReadAllText(Root + "validation.json").Contains("\"passed\": true");
+                if (!controls || !engine) { EditorApplication.Exit(1); return; }
+                var window = ScriptableObject.CreateInstance<CrtAudioPreviewWindow>();
+                window.InitializeSession();
+                window.SelectClip(AssetDatabase.LoadAssetAtPath<AudioClip>(CrtAudioPreviewWindow.ExamplePath));
+                await CrtAudioControlsValidation.Wait(.2);
+                window.TogglePlay(); await CrtAudioControlsValidation.Wait(.3); window.Engine.Stop();
+                window.Controls.tone = -36; window.Controls.SetDetailed(true);
+                window.Controls.settings.noise = .321f; window.Controls.settings.outputDb = -8;
+                File.WriteAllText(Root + "window-before-reload.json", EditorJsonUtility.ToJson(window));
+                File.WriteAllText(Root + "session-before-restart.txt", CrtAudioHistory.Session);
+                SessionState.SetBool(Pending, true);
+                EditorUtility.RequestScriptReload();
+            }
+            catch (Exception ex) { Debug.LogException(ex); EditorApplication.Exit(2); }
+        }
+        static async void FinishReload()
+        {
+            SessionState.SetBool(Pending, false);
+            try
+            {
+                await CrtAudioControlsValidation.Wait(.3);
+                var window = Resources.FindObjectsOfTypeAll<CrtAudioPreviewWindow>().FirstOrDefault();
+                bool passed = window && window.Source && window.Controls.detailed && window.Controls.tone == -36
+                    && window.Controls.settings.noise == .321f && window.Controls.settings.outputDb == -8
+                    && window.Engine != null && !window.Engine.Playing
+                    && Resources.FindObjectsOfTypeAll<AudioClip>().Count(a => a.name == "CRT Audio Tool Preview (temporary)") == 1;
+                File.WriteAllText(Root + "reload-validation.json", "{\"passed\":" + passed.ToString().ToLowerInvariant() + ",\"actualDomainReload\":true}");
+                if (window) UnityEngine.Object.DestroyImmediate(window);
+                EditorApplication.Exit(passed ? 0 : 3);
+            }
+            catch (Exception ex) { Debug.LogException(ex); EditorApplication.Exit(4); }
+        }
+        public static async void Restart()
+        {
+            try
+            {
+                bool newSession = CrtAudioHistory.Session != File.ReadAllText(Root + "session-before-restart.txt");
+                var window = ScriptableObject.CreateInstance<CrtAudioPreviewWindow>();
+                EditorJsonUtility.FromJsonOverwrite(File.ReadAllText(Root + "window-before-reload.json"), window);
+                // A layout can restore serialized window data from the previous process.
+                window.InitializeSession();
+                await CrtAudioControlsValidation.Wait(.3);
+                bool passed = newSession && window.Source == AssetDatabase.LoadAssetAtPath<AudioClip>(CrtAudioPreviewWindow.ExamplePath)
+                    && window.Engine != null && !window.Engine.Playing && !window.Controls.detailed && window.Controls.tone == 0
+                    && window.Controls.settings.outputDb == 0;
+                File.WriteAllText(Root + "restart-validation.json", "{\"passed\":" + passed.ToString().ToLowerInvariant() + ",\"actualNewEditorProcess\":true}");
+                UnityEngine.Object.DestroyImmediate(window);
+                EditorApplication.Exit(passed ? 0 : 5);
+            }
+            catch (Exception ex) { Debug.LogException(ex); EditorApplication.Exit(6); }
+        }
+    }
+}
