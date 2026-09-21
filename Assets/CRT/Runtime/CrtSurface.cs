@@ -16,6 +16,9 @@ namespace MediaPipeTest.CRT
         [Tooltip("Use 0 for automatic RawImage/quad/sprite aspect.")]
         public float displayAspect;
         public Material Instance => instance;
+        // Per-screen transient state. Never written into a shared CrtProfile.
+        [System.NonSerialized] public float transitionStrength;
+        [System.NonSerialized] public float transitionTime;
         Material instance, previous;
         Renderer targetRenderer;
         RawImage targetImage;
@@ -40,6 +43,7 @@ namespace MediaPipeTest.CRT
         {
             if (!instance) return;
             ActiveSettings.Apply(instance, effectEnabled);
+            ApplyTransition(instance);
             Texture effective = source;
             if (targetRenderer is SpriteRenderer sr && sr.sprite)
             {
@@ -77,8 +81,14 @@ namespace MediaPipeTest.CRT
                 // uGUI stencil masks maintain a derived material; update only CRT properties
                 // so runtime sliders also work beneath a Mask without altering stencil state.
                 var masked = targetImage.materialForRendering;
-                if (masked && masked != instance) { ActiveSettings.Apply(masked, effectEnabled); masked.SetVector("_FitScale", fit); }
+                if (masked && masked != instance) { ActiveSettings.Apply(masked, effectEnabled); ApplyTransition(masked); masked.SetVector("_FitScale", fit); }
             }
+        }
+        void ApplyTransition(Material material)
+        {
+            if (!material.HasProperty("_TransitionStrength")) return;
+            material.SetFloat("_TransitionStrength", effectEnabled ? Mathf.Clamp01(transitionStrength) : 0);
+            material.SetFloat("_TransitionTime", transitionTime);
         }
         void OnDisable()
         {
@@ -87,6 +97,7 @@ namespace MediaPipeTest.CRT
             if (targetRenderer && targetRenderer.sharedMaterial == instance) targetRenderer.sharedMaterial = previous;
             if (instance) Destroy(instance);
             instance = null;
+            transitionStrength = 0;
         }
     }
 }

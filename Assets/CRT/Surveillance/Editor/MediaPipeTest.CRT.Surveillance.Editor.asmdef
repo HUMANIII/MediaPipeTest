@@ -1,0 +1,5 @@
+{
+  "name": "MediaPipeTest.CRT.Surveillance.Editor",
+  "references": ["MediaPipeTest.CRT.Surveillance", "MediaPipeTest.CRT.Audio", "MediaPipeTest.CRT", "MediaPipeTest.CRT.Editor", "Unity.Cinemachine", "Unity.InputSystem", "Unity.RenderPipelines.Universal.Runtime", "Unity.RenderPipelines.Core.Runtime"],
+  "includePlatforms": ["Editor"]
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "file": "Assets/CRT/Surveillance/Runtime/SurveillanceFootstepAudio.cs",
+    "sha256": "C535B4B44D233857898A7A0ADEB39D83EDE655449AB79470149955C214ADC8D4"
+  },
+  {
+    "file": "Assets/CRT/Surveillance/Runtime/SurveillanceValidation.cs",
+    "sha256": "9F938E14A04442670CF4F6661B1E323362DF5CAF902A1707DDDDFBC3C0D2041C"
+  },
+  {
+    "file": "Assets/CRT/Surveillance/Editor/SurveillanceAudioSetup.cs",
+    "sha256": "8A61E3D08719D937017C61345C41682A0D0518F6846F6C6669A7DCAAC1806BA9"
+  },
+  {
+    "file": "Assets/CRT/Surveillance/Editor/SurveillanceSceneBuilder.cs",
+    "sha256": "23F7B2287EF0F76FE6B271101E29DB372F1472FD7D4F4F8DEDE44E88165008D0"
+  },
+  {
+    "file": "Assets/CRT/Surveillance/Scenes/SurveillanceDemo.unity",
+    "sha256": "DE392800FCE82868FAEFDCA0FE31CE466777636F6F5D54E53B80632C5C009406"
+  },
+  {
+    "file": "Assets/CRT/AudioPreview/Runtime/CrtAudioPreset.cs",
+    "sha256": "B703583D7C355078D8EC6AFF7F6042ACB3A44A025ED5A9032ADB78D4DDDF1316"
+  },
+  {
+    "file": "Assets/CRT/AudioPreview/Runtime/CrtAudioControls.cs",
+    "sha256": "5F94FE7C71CE976280227344D9D867AADE857C8FD52CCF86E10CC9209D8D7F64"
+  },
+  {
+    "file": "Assets/CRT/AudioPreview/Runtime/CrtAudioDsp.cs",
+    "sha256": "F7E44DBF5E8B8D72767DD0E628A113F736286F1D8BEDFA9D4D190963AA46BADE"
+  },
+  {
+    "file": "Assets/CRT/AudioPreview/Presets/DefaultCRT.asset",
+    "sha256": "75F0BE44947AE32F83F9F4A43057DE8BC7F85192403FA2B93C544AA0C10F820D"
+  },
+  {
+    "file": "Build/Surveillance/SurveillanceDemo_Data/Managed/MediaPipeTest.CRT.Audio.dll",
+    "sha256": "E812971B3D3557B3B492585466C2CBACA290DB543E3625E76098735404563523"
+  },
+  {
+    "file": "Build/Surveillance/SurveillanceDemo_Data/Managed/MediaPipeTest.CRT.Surveillance.dll",
+    "sha256": "11C118378B3AC2FABF8D7F31CD556708E5AEE39259CF707D815A9F3C02798102"
+  }
+]

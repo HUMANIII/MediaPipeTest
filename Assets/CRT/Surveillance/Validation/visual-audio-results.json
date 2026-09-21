@@ -1,0 +1,179 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "display mask contains a visible screen",
+      "passed": true,
+      "evidence": 99039
+    },
+    {
+      "name": "raw mode ignores maximum transition strength",
+      "passed": true,
+      "evidence": 0.0
+    },
+    {
+      "name": "CRT changes screen pixels",
+      "passed": true,
+      "evidence": 5.819226096117018
+    },
+    {
+      "name": "CRT leaves pixels outside the screen unchanged",
+      "passed": true,
+      "evidence": {
+        "mean": 0.0,
+        "maximum": 0.0
+      }
+    },
+    {
+      "name": "glitch changes screen pixels",
+      "passed": true,
+      "evidence": 110.93743878674057
+    },
+    {
+      "name": "glitch leaves pixels outside the screen unchanged",
+      "passed": true,
+      "evidence": {
+        "mean": 0.0,
+        "maximum": 0.0
+      }
+    },
+    {
+      "name": "transition visibly differs from normal CRT",
+      "passed": true,
+      "evidence": 110.08070221495235
+    },
+    {
+      "name": "normal CRT is monochrome",
+      "passed": true,
+      "evidence": 0.18007047728672543
+    },
+    {
+      "name": "CAM 1 is 1024x768",
+      "passed": true,
+      "evidence": [
+        768,
+        1024
+      ]
+    },
+    {
+      "name": "CAM 1 renders scene detail",
+      "passed": true,
+      "evidence": {
+        "std": 36.64348220118246,
+        "lit_fraction": 0.9875221252441406
+      }
+    },
+    {
+      "name": "CAM 1 has no error-shader magenta",
+      "passed": true,
+      "evidence": 0.0
+    },
+    {
+      "name": "CAM 2 is 1024x768",
+      "passed": true,
+      "evidence": [
+        768,
+        1024
+      ]
+    },
+    {
+      "name": "CAM 2 renders scene detail",
+      "passed": true,
+      "evidence": {
+        "std": 28.318225442991306,
+        "lit_fraction": 0.7920633951822916
+      }
+    },
+    {
+      "name": "CAM 2 has no error-shader magenta",
+      "passed": true,
+      "evidence": 0.0
+    },
+    {
+      "name": "CAM 3 is 1024x768",
+      "passed": true,
+      "evidence": [
+        768,
+        1024
+      ]
+    },
+    {
+      "name": "CAM 3 renders scene detail",
+      "passed": true,
+      "evidence": {
+        "std": 35.435931858580346,
+        "lit_fraction": 0.9602266947428385
+      }
+    },
+    {
+      "name": "CAM 3 has no error-shader magenta",
+      "passed": true,
+      "evidence": 0.0
+    },
+    {
+      "name": "CAM 4 is 1024x768",
+      "passed": true,
+      "evidence": [
+        768,
+        1024
+      ]
+    },
+    {
+      "name": "CAM 4 renders scene detail",
+      "passed": true,
+      "evidence": {
+        "std": 37.44849915531112,
+        "lit_fraction": 0.9411404927571615
+      }
+    },
+    {
+      "name": "CAM 4 has no error-shader magenta",
+      "passed": true,
+      "evidence": 0.0
+    },
+    {
+      "name": "CAM 1 and CAM 2 have distinct views",
+      "passed": true,
+      "evidence": 37.30874888102213
+    },
+    {
+      "name": "CAM 1 and CAM 3 have distinct views",
+      "passed": true,
+      "evidence": 29.649002075195312
+    },
+    {
+      "name": "CAM 1 and CAM 4 have distinct views",
+      "passed": true,
+      "evidence": 30.655353122287327
+    },
+    {
+      "name": "CAM 2 and CAM 3 have distinct views",
+      "passed": true,
+      "evidence": 34.57964070638021
+    },
+    {
+      "name": "CAM 2 and CAM 4 have distinct views",
+      "passed": true,
+      "evidence": 33.47483910454644
+    },
+    {
+      "name": "CAM 3 and CAM 4 have distinct views",
+      "passed": true,
+      "evidence": 16.56431664360894
+    },
+    {
+      "name": "mono PCM lasts 0.20 seconds",
+      "passed": true,
+      "evidence": 0.2
+    },
+    {
+      "name": "audio fades at both ends",
+      "passed": true,
+      "evidence": {
+        "start": 0.065732932220308,
+        "middle": 0.2962480671377588,
+        "end": 0.023906128265968492
+      }
+    }
+  ]
+}

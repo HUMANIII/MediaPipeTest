@@ -310,14 +310,21 @@ namespace MediaPipeTest.CRT.Editor
             g.P("VirtualResolution", new Vector2(640, 360), "Vector2ShaderProperty");
             g.P("Pixelation", 0f);
             var coords = g.SubGraph("CRTCoordinates", new Dictionary<string, Port>(g.properties) { ["UV"] = uv });
+            var glitch = g.P("TransitionStrength", 0f);
+            var clock = g.P("TransitionTime", 0f, max: 100000);
+            var tick = g.Op("Floor", g.Mul(clock, g.C(60)));
+            Port Hash(Port value) => g.Op("Fraction", g.Mul(g.Op("Sine", value), g.C(43758.5453f)));
+            var band = g.Op("Floor", g.Mul(g.Channel(coords["LocalUV"], 1), g.C(38)));
+            var bandNoise = Hash(g.Add(g.Mul(band, g.C(12.9898f)), g.Mul(tick, g.C(78.233f))));
+            var shiftedUV = g.Add(coords["SampleUV"], g.V2(g.Mul(g.Mul(g.Sub(bandNoise, g.C(.5f)), g.C(.055f)), glitch), g.C(0)));
             Port original, sampled, alpha, sourceBounds = g.C(1), originalBounds = g.C(1);
-            if (fullscreen) { original = g.Buffer(uv); sampled = g.Buffer(coords["SampleUV"]); alpha = g.Channel(original, 3); }
+            if (fullscreen) { original = g.Buffer(uv); sampled = g.Buffer(shiftedUV); alpha = g.Channel(original, 3); }
             else
             {
                 var tex = g.P("MainTex", null, "Texture2DShaderProperty");
                 var fit = g.P("FitScale", Vector2.one, "Vector2ShaderProperty");
                 Port Fit(Port p) => g.Add(g.Mul(g.Sub(p, g.C(.5f)), fit), g.C(.5f));
-                var baseUV = Fit(uv); var effectUV = Fit(coords["SampleUV"]);
+                var baseUV = Fit(uv); var effectUV = Fit(shiftedUV);
                 sourceBounds = g.Inside(effectUV); originalBounds = g.Inside(baseUV);
                 Port Atlas(Port p) => g.Add(atlasOrigin, g.Mul(p, atlasSize));
                 original = g.Sample(tex, sprite ? Atlas(baseUV) : baseUV);
@@ -345,10 +352,14 @@ namespace MediaPipeTest.CRT.Editor
             g.P("MonoTint", Color.white, "ColorShaderProperty");
             g.P("Brightness", 1.12f, max: 2);
             var phosphor = g.SubGraph("CRTPhosphor", new Dictionary<string, Port>(g.properties) { ["LocalUV"] = coords["LocalUV"], ["SourceColor"] = sampled });
+            var grainCell = g.Op("Floor", g.Mul(coords["LocalUV"], g.V2(g.C(768), g.C(576))));
+            var grain = Hash(g.Add(g.Op("DotProduct", grainCell, g.V2(g.C(12.9898f), g.C(78.233f))), g.Mul(tick, g.C(39.425f))));
+            var flicker = g.Add(g.C(1), g.Mul(g.Mul(g.Sub(Hash(tick), g.C(.5f)), g.C(.24f)), glitch));
+            var interference = g.Lerp(g.Mul(phosphor["Color"], flicker), grain, g.Mul(glitch, g.C(.86f)));
             var mask = g.P("EffectMask", null, "Texture2DShaderProperty");
             // CRT is fully applied inside the selected area; only the spatial mask mixes results.
             var weight = g.Mul(g.Mul(g.C(1), coords["Area"]), g.Channel(g.Sample(mask, uv), 0));
-            var color = g.Lerp(g.Mul(original, originalBounds), g.Mul(phosphor["Color"], g.Mul(coords["Bounds"], sourceBounds)), weight);
+            var color = g.Lerp(g.Mul(original, originalBounds), g.Mul(interference, g.Mul(coords["Bounds"], sourceBounds)), weight);
             // Compile a real bypass variant for the effectEnabled switch.
             // MultiCompile retains both runtime-toggle variants in the Windows build.
             object keyword = New("ShaderKeyword");

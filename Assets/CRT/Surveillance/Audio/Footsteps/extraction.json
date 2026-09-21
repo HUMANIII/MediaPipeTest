@@ -1,0 +1,38 @@
+[
+  {
+    "file": "A_Stone_L1.wav",
+    "startFrame": 19845,
+    "frames": 18963,
+    "pcmSHA256": "61edc52cf8f21234e63b891be513474a5467ddd8d6e5c272d1b9b5443da28add"
+  },
+  {
+    "file": "A_Stone_R1.wav",
+    "startFrame": 44100,
+    "frames": 18963,
+    "pcmSHA256": "729cfda35d38dc5587ea15ab0423dfc15a12df70c6709187a66ef7366fff0cdd"
+  },
+  {
+    "file": "A_Stone_L2.wav",
+    "startFrame": 68355,
+    "frames": 18963,
+    "pcmSHA256": "dc00845840848059fba1d26b782b867bd8802f7d61b38f45d122597faf3b10fa"
+  },
+  {
+    "file": "A_Stone_R2.wav",
+    "startFrame": 92610,
+    "frames": 18963,
+    "pcmSHA256": "fe01c035fcea67ed9a41e5cdae65abd2dd519064c12d91925aa7ede1d5251647"
+  },
+  {
+    "file": "A_Stone_L3.wav",
+    "startFrame": 116865,
+    "frames": 18963,
+    "pcmSHA256": "a14a17dd7bae71e448b707d645775de9d28368835375deef285c535957eba273"
+  },
+  {
+    "file": "A_Stone_R3.wav",
+    "startFrame": 141120,
+    "frames": 18963,
+    "pcmSHA256": "bf28d7998579f1b0c45d4441328b8946717b7705bf962312adc505264da493c0"
+  }
+]

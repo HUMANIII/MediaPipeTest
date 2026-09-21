@@ -1,0 +1,6 @@
+{
+  "name": "MediaPipeTest.CRT.Surveillance",
+  "rootNamespace": "MediaPipeTest.CRT.Surveillance",
+  "references": ["MediaPipeTest.CRT", "MediaPipeTest.CRT.Audio", "Unity.Cinemachine", "Unity.InputSystem", "Unity.RenderPipelines.Universal.Runtime", "Unity.RenderPipelines.Core.Runtime"],
+  "autoReferenced": true
+}

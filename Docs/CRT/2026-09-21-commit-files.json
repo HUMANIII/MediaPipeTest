@@ -1,0 +1,998 @@
+{
+  "status": "APPROVED_FOR_LOCAL_COMMITS",
+  "branch": "main",
+  "baseCommit": "c946fd04da23a943d7a1fa5d8030319519cd1a7d",
+  "existingIndexFingerprint": "7c2659b5ec9da902e48263d3a1b38af692c0b4621e61e2fbd8574251de4573c2",
+  "commits": [
+    {
+      "order": 1,
+      "title": "[기능] CRT Audio Lab 조절 도구와 설정 에셋 저장 추가",
+      "fileCount": 53,
+      "bytes": 4330218,
+      "files": [
+        {
+          "path": "Assets/CRT/AudioPreview.meta",
+          "bytes": 172,
+          "sha256": "b2636d1dc05d2e6f10d65bbf11aa23f2643fa9b74abdae39aedcb9989e393eba"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Editor.meta",
+          "bytes": 172,
+          "sha256": "906b7a5b40d1d2b72fd8ab2eaa4bf1e2fa6e6832ef30a0e52e40bc37d2d05644"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Editor/CrtAudioControlsValidation.cs",
+          "bytes": 14356,
+          "sha256": "78d0203466185fce77c9343a865399eac99c19a96bbc124b4916d46beb1fdc9a"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Editor/CrtAudioControlsValidation.cs.meta",
+          "bytes": 240,
+          "sha256": "ae54831f71a3a7dfb59bc978d4b1f9c78e33050789d127e8c3336c17ebd6fa42"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Editor/CrtAudioHistory.cs",
+          "bytes": 1441,
+          "sha256": "04d9bd2f2c95285c5dfd08880f1494096916728c9e8f036265171f2628766f7e"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Editor/CrtAudioHistory.cs.meta",
+          "bytes": 240,
+          "sha256": "deb4fbb968a0702a968753a3cfa4fc510e5792b8242c71dcfdb8703ab4aed9fc"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Editor/CrtAudioPreviewEngine.cs",
+          "bytes": 9092,
+          "sha256": "57a592e6f9b1f0347de2167ad127f79f167617f23d7eca54290d41b8ab017125"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Editor/CrtAudioPreviewEngine.cs.meta",
+          "bytes": 59,
+          "sha256": "5a74e7c6d9b256ad7401a99b69b4a400d8b00e3488b6782ae7f9e6279ff117e7"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Editor/CrtAudioPreviewValidation.cs",
+          "bytes": 9994,
+          "sha256": "73362a3bf149bebf6734afdd95e3db0964bfc22e9f9b4a3a45164933f3ad333d"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Editor/CrtAudioPreviewValidation.cs.meta",
+          "bytes": 59,
+          "sha256": "22ca54d09948bc1ac8f1e16407d6a8182c076eb48626c9862faf472bfff401d3"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Editor/CrtAudioPreviewWindow.cs",
+          "bytes": 15554,
+          "sha256": "517d4e6f9739409060cc852f08895d559621fc225c3d1058550197b750a59b6c"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Editor/CrtAudioPreviewWindow.cs.meta",
+          "bytes": 59,
+          "sha256": "f97f5df4b3c547c98b10c186b47d15a3412d2b3f794e021fce490aeabe7eca07"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Editor/MediaPipeTest.CRT.AudioPreview.Editor.asmdef",
+          "bytes": 186,
+          "sha256": "57ebbcb5925f21ffb8c3752a00741ebe9ac5a2f7c7af2a69cb33c3421eb0e07f"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Editor/MediaPipeTest.CRT.AudioPreview.Editor.asmdef.meta",
+          "bytes": 166,
+          "sha256": "8ea3bc4cb496ec0323be7d60ddaa207b7fca8f3a12919c27fd77c0e169e21ce8"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Examples.meta",
+          "bytes": 172,
+          "sha256": "594b9b1abe6f3b6a97947c18ccdc7959e3831fd6ef166c93c3f65fd6d0000c96"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Examples/A_Recorded_Original.wav",
+          "bytes": 705644,
+          "sha256": "e362e90538676594ce86e5f16a52396773bf4d7454841f982805478184f70600"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Examples/A_Recorded_Original.wav.meta",
+          "bytes": 485,
+          "sha256": "89f5ef9290e23e53047210b5751f86683d3c09ee6bf4c6489cda1b8ccc6fe2a3"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Presets.meta",
+          "bytes": 172,
+          "sha256": "632829e003b2c91e08f87c24d00d0881714bbff74dc8d14123c36c382ad790ef"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Presets/DefaultCRT.asset",
+          "bytes": 626,
+          "sha256": "75f0be44947ae32f83f9f4a43057de8bc7f85192403fa2b93c544aa0c10f820d"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Presets/DefaultCRT.asset.meta",
+          "bytes": 189,
+          "sha256": "8b7f7acc8184ff666e69a42f0251a04dcab132e0a2019db6d9a90825346a197e"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/README.md",
+          "bytes": 7915,
+          "sha256": "630335c95ad42bd99275e8b337582feff692390f6b2e10284924121182db7b6d"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/README.md.meta",
+          "bytes": 158,
+          "sha256": "802179b100efaf2b10f200deef153a9f00d433b4223b252c42131dc69b29b26a"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Runtime.meta",
+          "bytes": 172,
+          "sha256": "3173c436e000d2988db4602acc5e752cf42b80fdb4fde606d949e7342cfffb67"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Runtime/CrtAudioControls.cs",
+          "bytes": 2534,
+          "sha256": "5f94fe7c71ce976280227344d9d867aade857c8fd52ccf86e10cc9209d8d7f64"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Runtime/CrtAudioControls.cs.meta",
+          "bytes": 240,
+          "sha256": "4a81170949de63aca4be444da43536eff4cdddbb70a2120e75b638e7f4971138"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Runtime/CrtAudioDsp.cs",
+          "bytes": 6087,
+          "sha256": "f7e44dbf5e8b8d72767dd0e628a113f736286f1d8bedfa9d4d190963aa46bade"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Runtime/CrtAudioDsp.cs.meta",
+          "bytes": 59,
+          "sha256": "7ce0dec754e643f759540259f83e7b64a6819f7d21135635dc54a81340f5824e"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Runtime/CrtAudioPreset.cs",
+          "bytes": 2332,
+          "sha256": "b703583d7c355078d8ec6aff7f6042acb3a44a025ed5a9032adb78d4dddf1316"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Runtime/CrtAudioPreset.cs.meta",
+          "bytes": 59,
+          "sha256": "3ec47b6303ec9a092dac7d846d420f2aa8735d0f6c2290ed0fe7f156eb5d03ad"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Runtime/MediaPipeTest.CRT.Audio.asmdef",
+          "bytes": 93,
+          "sha256": "92a9a3cbd4b10afa9b414930f9ff3eb8be0b12cd70ca0125e326848f25000077"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/Runtime/MediaPipeTest.CRT.Audio.asmdef.meta",
+          "bytes": 166,
+          "sha256": "30f4665058c30eee9ded2baaaebb1cef3243566b84534277c01ea5db60324c91"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/VALIDATION.md",
+          "bytes": 4974,
+          "sha256": "2bbf6928676c09b874f32f9e36ad39bf1fe512bee3f831d5cb199a8deefb7dc9"
+        },
+        {
+          "path": "Assets/CRT/AudioPreview/VALIDATION.md.meta",
+          "bytes": 158,
+          "sha256": "940e95cfeaa5bd63fd92fce280ebe38b8ae9ad89fac9281d956fb13b6b2e6285"
+        },
+        {
+          "path": "AudioPreviews/CRT_Footsteps/.gitignore",
+          "bytes": 21,
+          "sha256": "70274e39677d5541cf05d222cbe77c24e1ed44dc909c550b53239d73d396d4a7"
+        },
+        {
+          "path": "AudioPreviews/CRT_Footsteps/A_Recorded_CRT.wav",
+          "bytes": 705644,
+          "sha256": "1b60fb2dcecc140140d72eb0d06279f3c603554b1d3979858d1b9b7747a68a6e"
+        },
+        {
+          "path": "AudioPreviews/CRT_Footsteps/A_Recorded_Original.wav",
+          "bytes": 705644,
+          "sha256": "e362e90538676594ce86e5f16a52396773bf4d7454841f982805478184f70600"
+        },
+        {
+          "path": "AudioPreviews/CRT_Footsteps/B_Synthesized_CRT.wav",
+          "bytes": 705644,
+          "sha256": "c17369da2e08e08d79bd2faf31064464f03a90a1254bba5ec55bfb1c9707b903"
+        },
+        {
+          "path": "AudioPreviews/CRT_Footsteps/B_Synthesized_Original.wav",
+          "bytes": 705644,
+          "sha256": "6c877545c07e73d2264371c87b857870926bb52ca9dd39cf7075c008b9155134"
+        },
+        {
+          "path": "AudioPreviews/CRT_Footsteps/README.md",
+          "bytes": 4487,
+          "sha256": "1e46411bcc20653cc6d64b3380c004065b7e0f23d16b06e4331e637d800f9815"
+        },
+        {
+          "path": "AudioPreviews/CRT_Footsteps/Source/Fantozzi-footsteps.7z",
+          "bytes": 476363,
+          "sha256": "415d360e0911c1c1c5355ee94023b772e6f4044f59b9b580610e7dbffd1840fd"
+        },
+        {
+          "path": "AudioPreviews/CRT_Footsteps/Source/Fantozzi-footsteps/flac/Fantozzi-StoneL1.flac",
+          "bytes": 37045,
+          "sha256": "7cfa4a2f500ae2bd19a961022296611d837c34ca2e556fe68deb692388f49971"
+        },
+        {
+          "path": "AudioPreviews/CRT_Footsteps/Source/Fantozzi-footsteps/flac/Fantozzi-StoneL2.flac",
+          "bytes": 33441,
+          "sha256": "dcbd6be44af4b3206daa36c5398035ca527bb057c51ce00482b9ca6356be2468"
+        },
+        {
+          "path": "AudioPreviews/CRT_Footsteps/Source/Fantozzi-footsteps/flac/Fantozzi-StoneL3.flac",
+          "bytes": 34318,
+          "sha256": "37a25f4254cf8f2e56d271912b0569f3bb15c57bf3fde9de492466eb23853b0d"
+        },
+        {
+          "path": "AudioPreviews/CRT_Footsteps/Source/Fantozzi-footsteps/flac/Fantozzi-StoneR1.flac",
+          "bytes": 36412,
+          "sha256": "7073bddd2e3ba432e15a83844180c0ebc52835c2c6bab0fa902ee5952499c729"
+        },
+        {
+          "path": "AudioPreviews/CRT_Footsteps/Source/Fantozzi-footsteps/flac/Fantozzi-StoneR2.flac",
+          "bytes": 34323,
+          "sha256": "d66330b4a32e93b0dfdcb8c53667654de8702a0fa48b2d06c48d94dc66b3e1cc"
+        },
+        {
+          "path": "AudioPreviews/CRT_Footsteps/Source/Fantozzi-footsteps/flac/Fantozzi-StoneR3.flac",
+          "bytes": 35929,
+          "sha256": "b98f2c4b932242739ce8687206f7eb3313ce30afd4af7b7e148507c5cbd26787"
+        },
+        {
+          "path": "AudioPreviews/CRT_Footsteps/check_previews.py",
+          "bytes": 3986,
+          "sha256": "a0ba22b827907fff34a8cb27cd72e19766d17645909fb5552199ccee2f090dbd"
+        },
+        {
+          "path": "AudioPreviews/CRT_Footsteps/generation.json",
+          "bytes": 2144,
+          "sha256": "622a874de64dcc94092c771109e105f8145dc1e513fd42f4e974d44bc7c97638"
+        },
+        {
+          "path": "AudioPreviews/CRT_Footsteps/make_previews.py",
+          "bytes": 6843,
+          "sha256": "66b47dc402d23fe629e99870e92326c5cc85f4ab9e7b04a35767e7442112ac13"
+        },
+        {
+          "path": "AudioPreviews/CRT_Footsteps/validation.json",
+          "bytes": 5987,
+          "sha256": "63e0895e63aa5bbd7f7008942c3b9238cf360de623dfe296b32b7ac85eabcafa"
+        },
+        {
+          "path": "Tools/CRT/AudioRefinementHarness.cs.txt",
+          "bytes": 4416,
+          "sha256": "810fb9b70569357ede8a5d99366846abc821599d8de39eff30c30c0787ee7e1a"
+        },
+        {
+          "path": "Tools/CRT/Test-AudioRefinement.ps1",
+          "bytes": 4023,
+          "sha256": "86ca7e688a4e8ead18c5b90bf2135a9505df33e503cb4fd4c4bcfa9eaac3dfe7"
+        },
+        {
+          "path": "Tools/CRT/check_audio_preview.py",
+          "bytes": 3879,
+          "sha256": "2c6f6b64182d37845d360635a28c531b68664d6fdf2ade69f1d2bf449efe9449"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "title": "[기능] CRT 감시실과 채널 글리치 및 발소리 연동 추가",
+      "fileCount": 126,
+      "bytes": 3295396,
+      "files": [
+        {
+          "path": "Assets/CRT/Editor/CrtGraphBuilder.cs",
+          "bytes": 23312,
+          "sha256": "87d4812345769c7dff0ccb0f80ff652b9afdf7fb3730fc86abdc7bd7479d7691"
+        },
+        {
+          "path": "Assets/CRT/README.md",
+          "bytes": 9709,
+          "sha256": "33585f99d8d14c8fbd89c54226d7a6009426cf52093418e57479679f42f24ffc"
+        },
+        {
+          "path": "Assets/CRT/Runtime/CrtSurface.cs",
+          "bytes": 5067,
+          "sha256": "c5ceb7c5c26426e3007b178a4b6a7c4d8244553c8838048bf411823d2f84cf33"
+        },
+        {
+          "path": "Assets/CRT/Shaders/CRTCanvas.shadergraph",
+          "bytes": 452798,
+          "sha256": "a769dab211882c970ea4e5539f15d155bc3de7e228db53d253b03816f48b1c41"
+        },
+        {
+          "path": "Assets/CRT/Shaders/CRTCoordinates.shadersubgraph",
+          "bytes": 213425,
+          "sha256": "6eba68b6bc86dde6c4560792154cf6a30f9d6f2caa5d6282cbe63cfe84789c30"
+        },
+        {
+          "path": "Assets/CRT/Shaders/CRTFullscreen.shadergraph",
+          "bytes": 326096,
+          "sha256": "dc350af9ff2414fde4f5ad5eb929e604fd2be9c5cc2aecb2b9414c4287f32176"
+        },
+        {
+          "path": "Assets/CRT/Shaders/CRTPhosphor.shadersubgraph",
+          "bytes": 385074,
+          "sha256": "1159d76391b2a3676a085f427620c1ec33a5533bd1b76d8ff258431fa33293fc"
+        },
+        {
+          "path": "Assets/CRT/Shaders/CRTSprite.shadergraph",
+          "bytes": 558073,
+          "sha256": "7890088d55454c20ab5632e539003d64135a321f98278a02a6405055e9b83ce0"
+        },
+        {
+          "path": "Assets/CRT/Shaders/CRTSurface.shadergraph",
+          "bytes": 456955,
+          "sha256": "bfc44f703eb6b9147ed9629ab796a3e8b494da1bd2dd0f8b78f8d91b44c04e67"
+        },
+        {
+          "path": "Assets/CRT/Surveillance.meta",
+          "bytes": 172,
+          "sha256": "c89282134e07f7245f34cefbb95786eb661529f6ec58b6a94895c8edf8ad97ab"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Animation.meta",
+          "bytes": 172,
+          "sha256": "db8cbb1e6ac139fb52e89449351268456bec85d29d258c4bd5eaf276930cc0af"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Animation/DummyLocomotion.controller",
+          "bytes": 3013,
+          "sha256": "5df12440888b9b4a50e228203746920dc8df503c4b6755f3b82ad0145704c92d"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Animation/DummyLocomotion.controller.meta",
+          "bytes": 188,
+          "sha256": "92ad20e6711e6170faa8e7cb6abdaceb604f315fd0edc19d384b76876aecd094"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Audio.meta",
+          "bytes": 172,
+          "sha256": "a9487f3575f170003058e77917c25c4b07c5bc1d14741fd20ebc28cefe96720c"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Audio/ChannelStatic.wav",
+          "bytes": 17684,
+          "sha256": "377a50dba6ff820345d194c3fe0499b4cd165f03fa5014ac6f99991084a143ea"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Audio/ChannelStatic.wav.meta",
+          "bytes": 485,
+          "sha256": "1d3a56710e849d680f1a57addfd46e46a0b3e139d7dfc5766d83fbefafe23c99"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Audio/Footsteps.meta",
+          "bytes": 172,
+          "sha256": "1763ba700928dd191b6fc6f403426d80d7cd52b7bcf8f806d601b5c4fc334505"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Audio/Footsteps/A_Stone_L1.wav",
+          "bytes": 37970,
+          "sha256": "5e46addb917104a6a6b82360aa931761c7ada06254a5eef874806cdbfaa1aaa9"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Audio/Footsteps/A_Stone_L1.wav.meta",
+          "bytes": 485,
+          "sha256": "cf4764251d8a070e93574516fe41089bf4bc799b08928ed582cc624113a2f480"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Audio/Footsteps/A_Stone_L2.wav",
+          "bytes": 37970,
+          "sha256": "2dda8f0c30a368490a5c5e97dbe78dd21e9ce11305ad27b98368ad143aceafbd"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Audio/Footsteps/A_Stone_L2.wav.meta",
+          "bytes": 485,
+          "sha256": "8178034950571e546777fd9674f3c7036c0580bf8a2b4ef706108ce993aa11e8"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Audio/Footsteps/A_Stone_L3.wav",
+          "bytes": 37970,
+          "sha256": "c7b6416ae1529d765ee6ed66815e262eafaacdab3eb6442a60074d28c01042c4"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Audio/Footsteps/A_Stone_L3.wav.meta",
+          "bytes": 485,
+          "sha256": "beffe9c1d5337ae7f0481544051aded1ed6f582914600ef30a4444eeb7125494"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Audio/Footsteps/A_Stone_R1.wav",
+          "bytes": 37970,
+          "sha256": "f1ad657d646cf496d74870b1dbdb9e9422790da05cc80b3f3a4218efe8460d2b"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Audio/Footsteps/A_Stone_R1.wav.meta",
+          "bytes": 485,
+          "sha256": "48b58ee74f073ad48491ce1deb8d8ab1354c1295e17bd03b891b362f68dbb55a"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Audio/Footsteps/A_Stone_R2.wav",
+          "bytes": 37970,
+          "sha256": "f5d140eabaed6a6867587511d3c83dc013eacfba6696fb391f2ec4350d4efadf"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Audio/Footsteps/A_Stone_R2.wav.meta",
+          "bytes": 485,
+          "sha256": "dba5f9d3676af2ea0602f1ebe0623fdb2a5c746dfbc084cc2cba449a118919a3"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Audio/Footsteps/A_Stone_R3.wav",
+          "bytes": 37970,
+          "sha256": "0492ccbd0e5bc8506b0c6a306b3b189a139459569b1cf763db6523996e988b17"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Audio/Footsteps/A_Stone_R3.wav.meta",
+          "bytes": 485,
+          "sha256": "367d75deadd233255d77007f5024918f625bd63faa02e3a9fb07f4e2cbd38c48"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Audio/Footsteps/README.md",
+          "bytes": 963,
+          "sha256": "a4591d977dab0931c5d12db3927297eae6b808c14625e356106f796bbe68c423"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Audio/Footsteps/README.md.meta",
+          "bytes": 158,
+          "sha256": "c2140187451dcdcd4145e076cf23ef4ec639248b74f773c1fe8ec6b53062a700"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Audio/Footsteps/extraction.json",
+          "bytes": 1057,
+          "sha256": "68ee0fe72e7a870030253357913455cb576697237dc9d1e2754fbadf92a428bc"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Audio/Footsteps/extraction.json.meta",
+          "bytes": 158,
+          "sha256": "39bb97792b7b1ef2768f93177962ecf55bdc9bd2f9cef44898a7a2c322e7c04e"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Editor.meta",
+          "bytes": 172,
+          "sha256": "3fadb5a1fd5b6cf446b2c59e3b534d3369fbcd339a8618830e619b3eb5f9efc5"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Editor/MediaPipeTest.CRT.Surveillance.Editor.asmdef",
+          "bytes": 339,
+          "sha256": "af12aa844a50c037a3ade54b361e9e752990f672331f49fcb2ca96260acd9753"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Editor/MediaPipeTest.CRT.Surveillance.Editor.asmdef.meta",
+          "bytes": 166,
+          "sha256": "9f42433c4ae036a7305b1635b02243f3bd2280bbe4d75a26a841142cdbe44a90"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Editor/SurveillanceAudioSetup.cs",
+          "bytes": 4564,
+          "sha256": "8a61e3d08719d937017c61345c41682a0d0518f6846f6c6669a7dcaac1806ba9"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Editor/SurveillanceAudioSetup.cs.meta",
+          "bytes": 59,
+          "sha256": "6bb3145c10769a65a5566eb21e33cf54ae1f6260189f19ab6cf558badbeece94"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Editor/SurveillanceSceneBuilder.cs",
+          "bytes": 33486,
+          "sha256": "23f7b2287ef0f76fe6b271101e29db372f1472fd7d4f4f8dede44e88165008d0"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Editor/SurveillanceSceneBuilder.cs.meta",
+          "bytes": 59,
+          "sha256": "c8e64301d017b033fdfc4e4c82106aba6800dbcabbcb09fbac11205b2ad5a39d"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Materials.meta",
+          "bytes": 172,
+          "sha256": "27bd985a6f8eed92962fe25d585e3f84e6e0e4d2fb1bd9edf3b3acebf64fdc2e"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Materials/CRT_casing.mat",
+          "bytes": 3935,
+          "sha256": "bb9aec630efde8a92de500421f697dcb614fba5b169b21eee4e69487d7844815"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Materials/CRT_casing.mat.meta",
+          "bytes": 188,
+          "sha256": "9cadd01fac99de30d1481801251a60aef13bc3bdc5adc0cb43811771a3351a4c"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Materials/Dummy_White.mat",
+          "bytes": 3824,
+          "sha256": "498cdc7b3c0738e71e7b7a67c3122c0b308fe1a939de6f14798c2fe2baefe997"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Materials/Dummy_White.mat.meta",
+          "bytes": 188,
+          "sha256": "760b11e76209ecb30fc77548863aa9406bf7769f691718e46f72199cb81fc4b8"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Materials/Room_ceiling.mat",
+          "bytes": 3952,
+          "sha256": "b7ad494f19f8934c38ddd5f4b1882e9b23184f24af3a1dcf094dd8249aa5ba07"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Materials/Room_ceiling.mat.meta",
+          "bytes": 188,
+          "sha256": "0c1d7d20a1ac6f87d9a6f9e306a5c8e4065476b081fb44a890c9bd91a58730d4"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Materials/Room_floor.mat",
+          "bytes": 3951,
+          "sha256": "fa706732096b049a0a89f72a03120be4b2655d8e7ea70cb67bbb7c547890b646"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Materials/Room_floor.mat.meta",
+          "bytes": 188,
+          "sha256": "3373bf57c2429ad8226e0d9fa29767bd24ca00f7a0a3ebab110f2007ab67acb2"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Materials/Room_plaster.mat",
+          "bytes": 3917,
+          "sha256": "dd583dd5d2c73bd3d3e552e110dab375372a36a8e1c0186c387c82d1990f492b"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Materials/Room_plaster.mat.meta",
+          "bytes": 188,
+          "sha256": "3ee80d95c6bac1d95ce584580ce425e79e9a6aa97fc7096a75b1a2ab1fb0ebd5"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Materials/Stool_steel.mat",
+          "bytes": 3841,
+          "sha256": "bbd1b312fe75b12c7ada4e0863abfebd145cb240fe3ae704b37cdd6dd4db4809"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Materials/Stool_steel.mat.meta",
+          "bytes": 188,
+          "sha256": "a49a55a69199f47d8caef695ea46635bb340f40c1e47fd4d6ef70e20afc234d5"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Materials/Worn_wood.mat",
+          "bytes": 3928,
+          "sha256": "92d468a5f3650551fb9a7105efc3520ea4ddd0ce81419e2e144d318710fc2cd2"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Materials/Worn_wood.mat.meta",
+          "bytes": 188,
+          "sha256": "130b0a40a544f02ece3a42787bad504cb4c8c4253f5725e250cadcc6b1947d51"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Meshes.meta",
+          "bytes": 172,
+          "sha256": "fcae6e5f76e52643bf5b1b52570395618af0702c68098148ee997a6d6421ae80"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Meshes/CRTScreenNormalized.asset",
+          "bytes": 12874,
+          "sha256": "4025e09e9b69df588c4f6034e7eb1aea715eb51abbb531502a19ccf8a7fd81b6"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Meshes/CRTScreenNormalized.asset.meta",
+          "bytes": 188,
+          "sha256": "a67859df50f769241601ded86ee3c7b08dd8c1a584d70974c892f5e573c1ca20"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Navigation.meta",
+          "bytes": 172,
+          "sha256": "1c3172385009c1f02630d1077bc36abd214f774b06b32126634ca2d1532de4ca"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Navigation/HospitalNavigation.asset",
+          "bytes": 13140,
+          "sha256": "789ce71e0a9987f521911590f2e0fbfbf4ba6eec6640f141e5a9786a9dd05a5a"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Navigation/HospitalNavigation.asset.meta",
+          "bytes": 189,
+          "sha256": "c064f7e914a99b129418796ccfcb1d73a245568de247ae13798aeef95afe89a8"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Prefabs.meta",
+          "bytes": 172,
+          "sha256": "34db0dcd09cc89ce8b03fd69f815445d6007420382b4f7a907f7cd26c8c36c5e"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Prefabs/SimpleStool.prefab",
+          "bytes": 17118,
+          "sha256": "7e2e0b9e14eabbd5b2629823ea56b4b06c7325651a50dd8a652b52f327aee81f"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Prefabs/SimpleStool.prefab.meta",
+          "bytes": 154,
+          "sha256": "0c0fa23082e0ea3db426583ef031be3be84be97bfd87944cddc55466eae0d764"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Prefabs/SurveillanceCRT.prefab",
+          "bytes": 12575,
+          "sha256": "c35dcf91d4fc4f5966a613e3624f0d6f959f8b19ee1bbee4728db98ed4d74079"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Prefabs/SurveillanceCRT.prefab.meta",
+          "bytes": 154,
+          "sha256": "b2e1167ed50e3d55a97b16edae2ae33b16142b1e310b08a41196416579b42e9d"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Prefabs/WhitePatrolDummy.prefab",
+          "bytes": 15392,
+          "sha256": "4905660abd7efeb9c46768fc566c5f4bb55d5066d38f412298ba646634512def"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Prefabs/WhitePatrolDummy.prefab.meta",
+          "bytes": 154,
+          "sha256": "7fca40ead7887d68bdecafc40aba20cab96c33b0c7bafe02344e9825cb92d48f"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Profiles.meta",
+          "bytes": 172,
+          "sha256": "083536677c30458bf16d75dc3a0055d1d54c812db8175d8688fbca805f891b73"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Profiles/SurveillanceCRT.asset",
+          "bytes": 857,
+          "sha256": "609a064e33670637aadcdb500ecc99fc37120aefd52b68a751363aedfc8225c3"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Profiles/SurveillanceCRT.asset.meta",
+          "bytes": 189,
+          "sha256": "8227ecb62b990494a923cca391bbad1d3e5851bd5430e810070ecb3d09f48ea9"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/README.md",
+          "bytes": 7848,
+          "sha256": "1a9650def62e5b5d111ad4b55f5c8d54a9a09030c68532659d365ae5f9e46731"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/README.md.meta",
+          "bytes": 158,
+          "sha256": "7b984d455aa49fe6443083b944d182e837c82ea9a4ebb075490393fc160abd56"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Runtime.meta",
+          "bytes": 172,
+          "sha256": "110da6a2ec9f85c731fa825575894b13431ffbd01a6194979a5c0038953bd30a"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Runtime/HospitalWanderer.cs",
+          "bytes": 2780,
+          "sha256": "30f85c65c53755cdafab4962c5215c6ab47e9470817a87f5258ccc8b8325add2"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Runtime/HospitalWanderer.cs.meta",
+          "bytes": 59,
+          "sha256": "e1e88711a8606bf43d3ce62e785c93dd75ee557bced41a2d360d3d3901893f09"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Runtime/MediaPipeTest.CRT.Surveillance.asmdef",
+          "bytes": 315,
+          "sha256": "608c445f4b615f92d863e88139c83e8bcfef000b43d0a2ffa14a54829061b320"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Runtime/MediaPipeTest.CRT.Surveillance.asmdef.meta",
+          "bytes": 166,
+          "sha256": "059ce86b4bd46e02d5dee823963e04294436718d7558c5f7f770ffd3a338ad41"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Runtime/SurveillanceEnvironment.cs",
+          "bytes": 940,
+          "sha256": "6768babc01a98bd035c702b2316a77137df5c5640f26d976829f7ac32196bc19"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Runtime/SurveillanceEnvironment.cs.meta",
+          "bytes": 59,
+          "sha256": "87e8d83f284b00f4677364269e25be0a965955d7fcce1145f3fd0b8cd3d606cc"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Runtime/SurveillanceFeed.cs",
+          "bytes": 3967,
+          "sha256": "c0a852bb2660a74ab8bbb0309dda9777d65955d4291d183e2fc37260037c7ac8"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Runtime/SurveillanceFeed.cs.meta",
+          "bytes": 59,
+          "sha256": "aeb7f62142ebfd9c016c984511f5f21919080ff7c6ba72ca449f0318b3361e06"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Runtime/SurveillanceFootstepAudio.cs",
+          "bytes": 6610,
+          "sha256": "c535b4b44d233857898a7a0adeb39d83ede655449ab79470149955c214adc8d4"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Runtime/SurveillanceFootstepAudio.cs.meta",
+          "bytes": 59,
+          "sha256": "e1727d008de45d4f1c0fb386e20c03f5bb094724679993cf5e92784fa30daa1a"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Runtime/SurveillanceHud.cs",
+          "bytes": 2514,
+          "sha256": "2545fd55fb1afeb2aef17c7b275200c42f123832464b878b17a301181c0733bb"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Runtime/SurveillanceHud.cs.meta",
+          "bytes": 59,
+          "sha256": "765b9457221a2f83b9852e686916c6c9bdfb6ce73096966290f00adc17594f5a"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Runtime/SurveillancePlayer.cs",
+          "bytes": 5766,
+          "sha256": "734fb1abc56cd0376bbbab734c6eb018ea2f0656a4fcdf32e6acd41103dcdbb7"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Runtime/SurveillancePlayer.cs.meta",
+          "bytes": 59,
+          "sha256": "597f34878a2bac96fc78b9e63abdce2df5b1307169756e101cdada5dbdf6f92c"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Runtime/SurveillanceValidation.cs",
+          "bytes": 24055,
+          "sha256": "9f938e14a04442670cf4f6661b1e323362df5caf902a1707ddddfbc3c0d2041c"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Runtime/SurveillanceValidation.cs.meta",
+          "bytes": 59,
+          "sha256": "9d76a5b8dd6ec9eec83b0dc82c503916043a5f315acf046f7257d6a3f2ad23b7"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Scenes.meta",
+          "bytes": 172,
+          "sha256": "ca999a0a030a535e1e68dc6dd95b43e7a3ff6a3369b5297923a142899976c565"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Scenes/SurveillanceDemo.unity",
+          "bytes": 357810,
+          "sha256": "de392800fce82868faefdca0fe31ce466777636f6f5d54e53b80632c5c009406"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Scenes/SurveillanceDemo.unity.meta",
+          "bytes": 176,
+          "sha256": "9aa0cdd11d67bf81d2a665330e0e0a7924da0e1563be1a159f2792933bb1aac2"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Settings.meta",
+          "bytes": 172,
+          "sha256": "1b81770c3c55574cf6d350a108efa8fe8ea0971b8fb93877c24cab048ff68b0a"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Settings/SurveillancePipeline.asset",
+          "bytes": 4679,
+          "sha256": "9c8dd0bcf40d35ffea94964eedd69b3d8de70ba94cc37b1298e3ca80fd29bfb1"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Settings/SurveillancePipeline.asset.meta",
+          "bytes": 189,
+          "sha256": "461608903cc19883aadc8be72bc312a577e119d26c9d4f389242d35a04ece4d6"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Settings/SurveillanceRenderer.asset",
+          "bytes": 1897,
+          "sha256": "ca77b32e6fedbb3e4345af50c89a62f86defb2ebf0a09e11169881e82ec62103"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Settings/SurveillanceRenderer.asset.meta",
+          "bytes": 189,
+          "sha256": "177289895ef0eb9204f1ff77a67386948da3d4fa7fd0d2e649149b02783a35c3"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/VALIDATION-AUDIO.md",
+          "bytes": 4397,
+          "sha256": "efb8cc880e08e8b61feab3f79311d6abca2a1f241186d2566981a60a7b6d55b9"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/VALIDATION-AUDIO.md.meta",
+          "bytes": 158,
+          "sha256": "f937df1722d257a87f3ac1832eaca9cc9aba472b93e822c145a930a81f881eca"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/VALIDATION.md",
+          "bytes": 5832,
+          "sha256": "dd784beda13135c16f64349da74dfe0a4c4648882ea46c7ffb93caf7efc4487e"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/VALIDATION.md.meta",
+          "bytes": 158,
+          "sha256": "8477f0a57d8155fa66341f755d8d136eaeeea23dd9274db5eed149f976679783"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Validation.meta",
+          "bytes": 172,
+          "sha256": "bef0ce2945bbb8a74b03d5baa4b9c4f00279329dbb4fc017d77fe6eebadb1bcb"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Validation/asset-result.txt",
+          "bytes": 42,
+          "sha256": "5f413ee7c6920d18de2710bd2b3ba6286e2d44ae8eee1f41158f8dc4d8eb73c8"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Validation/asset-result.txt.meta",
+          "bytes": 158,
+          "sha256": "6ad17b6db132993dff79d4a14d02b43ee2a75522501c53e5f3470f30e331beaf"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Validation/audio-pcm-results.json",
+          "bytes": 2197,
+          "sha256": "b5e6810d27e296cc409f437fa818d51f417c14f316a609361873c2ca8dbd8b4b"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Validation/audio-pcm-results.json.meta",
+          "bytes": 158,
+          "sha256": "944e2e29500e38ed99cabca9ebbdefad277fb312dd6c138042f464c31ae2044e"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Validation/audio-runtime-results.json",
+          "bytes": 6084,
+          "sha256": "a3a1ea640da571e677dfe9f6947c7c2287b3f267a43f06c2f82aaf4411cef629"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Validation/audio-runtime-results.json.meta",
+          "bytes": 158,
+          "sha256": "87c0f50b996022f46fd8676774802f5cfc39318e37f9878361d1da68a192a609"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Validation/audio-source-build-hashes.json",
+          "bytes": 1852,
+          "sha256": "f2ab1692ee8218b3ba92a832e2b42c7d8b2893e8cdc54f97ac823a9f18c505ba"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Validation/audio-source-build-hashes.json.meta",
+          "bytes": 158,
+          "sha256": "78c180107ef422edbe08f34e2dd79bdc27970e2958bb0ec2665578e69c45177b"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Validation/build-result.txt",
+          "bytes": 39,
+          "sha256": "3a98ab2099ffd78239e24c9946a1d34e399daee6b680b7f79b09dc991ad30f4a"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Validation/build-result.txt.meta",
+          "bytes": 158,
+          "sha256": "e547ddd40fc0321552fdc054165a8bec8a7a1e437aeb6b1dca6e94c1e4478c87"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Validation/regression-summary.json",
+          "bytes": 1920,
+          "sha256": "99758e6d2d55b9398e4b89d062d26771f448c6a22b68addafa247b6b5c930126"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Validation/regression-summary.json.meta",
+          "bytes": 158,
+          "sha256": "4dd2a5dcd421d80e798f4e1bb9ee855e04a5cc385369a9eb647ee0c384995e42"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Validation/runtime-results.json",
+          "bytes": 4423,
+          "sha256": "4984263ecf79e49ecc6924646704d296cab03a24130d8f540cfc16b52b956610"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Validation/runtime-results.json.meta",
+          "bytes": 158,
+          "sha256": "0c25ad569c01ca79f4229b38f4a0e460d34038deeb654254c5db77383e1768d9"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Validation/source-build-hashes.json",
+          "bytes": 5276,
+          "sha256": "c5990c5a924abf747a01a0d366bebe69658d9987788b4f64558721f5eb22150f"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Validation/source-build-hashes.json.meta",
+          "bytes": 158,
+          "sha256": "a3e7995aabf1eec5458c2bd1c144f590f7509a71ad5754e0b5a13943a001db87"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Validation/visual-audio-results.json",
+          "bytes": 4003,
+          "sha256": "014b85a7097e734ac0ce4b919f8bd228711f7527eb55199355339a711a646b9b"
+        },
+        {
+          "path": "Assets/CRT/Surveillance/Validation/visual-audio-results.json.meta",
+          "bytes": 158,
+          "sha256": "35d4c5cb0c7409c0d592d6f76e8d07c1d2984d7d360e23014c7b41b234862e6d"
+        },
+        {
+          "path": "ProjectSettings/TagManager.asset",
+          "bytes": 579,
+          "sha256": "454344065027b44ac012c1b213669bb182f883e2a43096a8bb5120bdcc7a5f32"
+        },
+        {
+          "path": "README.md",
+          "bytes": 728,
+          "sha256": "cad2c5798185ed79d1a55227512e1fe871d11457aa4f63b1945ebbc729977647"
+        },
+        {
+          "path": "Tools/CRT/check_surveillance.py",
+          "bytes": 3856,
+          "sha256": "1dfb422cb7db3b3b1f1aad1e08ae802e16c9cc74ed398ca4e5fbda60ad186712"
+        },
+        {
+          "path": "Tools/CRT/check_surveillance_footsteps.py",
+          "bytes": 2924,
+          "sha256": "64bb44f199e174edbb90504da44c5822030ddd2d9e73f806ef9d96bc2db894ab"
+        },
+        {
+          "path": "Tools/CRT/extract_approved_footsteps.py",
+          "bytes": 1360,
+          "sha256": "1014b9f00d7231c1aac76f8d26c300ce1d914e6c01e0285629da9fe362fb158f"
+        }
+      ],
+      "additionalReviewDocuments": [
+        "Docs/CRT/2026-09-21-commit-review.md",
+        "Docs/CRT/2026-09-21-commit-files.json"
+      ]
+    }
+  ],
+  "priorAudioEvidence": {
+    "validation": {
+      "passed": true,
+      "checks": 19
+    },
+    "controls-validation": {
+      "passed": true,
+      "checks": 31
+    },
+    "reload-validation": {
+      "passed": true,
+      "checks": 0
+    },
+    "restart-validation": {
+      "passed": true,
+      "checks": 0
+    },
+    "independent-pcm-checks": {
+      "passed": true,
+      "checks": 7
+    }
+  },
+  "currentMatchesRecordedAudioBuild": [
+    {
+      "path": "Assets/CRT/Surveillance/Runtime/SurveillanceFootstepAudio.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/CRT/Surveillance/Runtime/SurveillanceValidation.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/CRT/Surveillance/Editor/SurveillanceAudioSetup.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/CRT/Surveillance/Editor/SurveillanceSceneBuilder.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/CRT/Surveillance/Scenes/SurveillanceDemo.unity",
+      "matches": true
+    },
+    {
+      "path": "Assets/CRT/AudioPreview/Runtime/CrtAudioPreset.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/CRT/AudioPreview/Runtime/CrtAudioControls.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/CRT/AudioPreview/Runtime/CrtAudioDsp.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/CRT/AudioPreview/Presets/DefaultCRT.asset",
+      "matches": true
+    },
+    {
+      "path": "Build/Surveillance/SurveillanceDemo_Data/Managed/MediaPipeTest.CRT.Audio.dll",
+      "matches": true
+    },
+    {
+      "path": "Build/Surveillance/SurveillanceDemo_Data/Managed/MediaPipeTest.CRT.Surveillance.dll",
+      "matches": true
+    }
+  ],
+  "approvalScope": "Two local commits in this order after explicit user approval; no push. No staging was performed to prepare this document.",
+  "readmeRevision": "Added sound usage to the CRT README and root README; corrected Audio Lab and preview documentation to reflect completed runtime integration. Approved by the user for the two local commits.",
+  "approval": {
+    "date": "2026-09-21",
+    "userInstruction": "커밋 올려줘",
+    "scope": "Two local commits as reviewed, including the sound README additions; no push."
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "approved A original unchanged",
+      "passed": true,
+      "evidence": "E:\\02.Unity\\MediaPipeTest_0\\AudioPreviews\\CRT_Footsteps\\A_Recorded_Original.wav"
+    },
+    {
+      "name": "A_Stone_L1.wav exact approved PCM slice",
+      "passed": true,
+      "evidence": "61edc52cf8f21234e63b891be513474a5467ddd8d6e5c272d1b9b5443da28add"
+    },
+    {
+      "name": "A_Stone_R1.wav exact approved PCM slice",
+      "passed": true,
+      "evidence": "729cfda35d38dc5587ea15ab0423dfc15a12df70c6709187a66ef7366fff0cdd"
+    },
+    {
+      "name": "A_Stone_L2.wav exact approved PCM slice",
+      "passed": true,
+      "evidence": "dc00845840848059fba1d26b782b867bd8802f7d61b38f45d122597faf3b10fa"
+    },
+    {
+      "name": "A_Stone_R2.wav exact approved PCM slice",
+      "passed": true,
+      "evidence": "fe01c035fcea67ed9a41e5cdae65abd2dd519064c12d91925aa7ede1d5251647"
+    },
+    {
+      "name": "A_Stone_L3.wav exact approved PCM slice",
+      "passed": true,
+      "evidence": "a14a17dd7bae71e448b707d645775de9d28368835375deef285c535957eba273"
+    },
+    {
+      "name": "A_Stone_R3.wav exact approved PCM slice",
+      "passed": true,
+      "evidence": "bf28d7998579f1b0c45d4441328b8946717b7705bf962312adc505264da493c0"
+    },
+    {
+      "name": "player reads the imported approved step",
+      "passed": true,
+      "evidence": 3.0517578125e-05
+    },
+    {
+      "name": "runtime CRT retains rate and duration",
+      "passed": true,
+      "evidence": {
+        "rate": 44100,
+        "seconds": 0.43
+      }
+    },
+    {
+      "name": "runtime CRT output has no clipping and fades both edges",
+      "passed": true,
+      "evidence": {
+        "peak": 0.5220947265625,
+        "first": 0.0,
+        "last": 0.0
+      }
+    },
+    {
+      "name": "runtime default CRT narrows the recorded spectrum",
+      "passed": true,
+      "evidence": {
+        "original": 0.37726621025638923,
+        "crt": 0.07177599164921875
+      }
+    },
+    {
+      "name": "runtime CRT is audibly nonzero PCM",
+      "passed": true,
+      "evidence": 0.04128015692226921
+    }
+  ]
+}

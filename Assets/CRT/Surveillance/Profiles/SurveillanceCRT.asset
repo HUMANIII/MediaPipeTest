@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e707dfe567776e42bf906eda3af5765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MediaPipeTest.CRT::MediaPipeTest.CRT.CrtProfile
+  settings:
+    rgbDensity: 240
+    rgbStrength: 0.12
+    scanlineCount: 240
+    scanlineWidth: 0.35
+    scanlineStrength: 0.24
+    virtualResolution: {x: 512, y: 384}
+    pixelation: 0.3
+    curvature: 0.035
+    vignette: 0.24
+    vignetteRadius: 0
+    vignetteSoftness: 1
+    monochrome: 1
+    monoTint: {r: 1, g: 1, b: 1, a: 1}
+    brightness: 1.25
+    screenRect: {x: 0, y: 0, z: 1, w: 1}
+    effectMask: {fileID: 0}

@@ -1,0 +1,76 @@
+{
+  "capture-checks": {
+    "passed": true,
+    "passedCount": 56,
+    "total": 56
+  },
+  "profile-checks": {
+    "passed": true,
+    "passedCount": 77,
+    "total": 77
+  },
+  "refinement-checks": {
+    "passed": true,
+    "passedCount": 102,
+    "total": 102,
+    "maxMeanAbsoluteError": 0.0
+  },
+  "runtime": {
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "api": "Direct3D11",
+    "resolution": "1920x1080",
+    "unity": "6000.3.23f1",
+    "videoPrepared": true,
+    "videoAdvanced": true,
+    "videoLooped": true,
+    "videoReopened": true,
+    "pauseResume": true,
+    "uiIncluded": true,
+    "uiExcluded": true,
+    "sceneReloaded": true,
+    "profilesUnchanged": true,
+    "profileBindingsWorking": true,
+    "capturesHaveContent": true,
+    "renderTexturesBefore": 1,
+    "renderTexturesAfter": 1,
+    "timings": [
+      {
+        "mode": "baseline-video",
+        "meanMs": 0.6949092149734497,
+        "p95Ms": 2.3161990642547607,
+        "gpuMs": -1.0,
+        "frames": 4318,
+        "gpuValidSamples": 3334,
+        "gpuInvalidSamples": 1
+      },
+      {
+        "mode": "three-surfaces-video",
+        "meanMs": 0.6936537623405457,
+        "p95Ms": 2.4328017234802246,
+        "gpuMs": 0.2779996395111084,
+        "frames": 4325,
+        "gpuValidSamples": 3382,
+        "gpuInvalidSamples": 0
+      },
+      {
+        "mode": "fullscreen-video",
+        "meanMs": 0.7812957167625427,
+        "p95Ms": 2.8870959281921387,
+        "gpuMs": 0.3837052583694458,
+        "frames": 3840,
+        "gpuValidSamples": 2946,
+        "gpuInvalidSamples": 0
+      },
+      {
+        "mode": "fullscreen-with-ui-video",
+        "meanMs": 0.7189920544624329,
+        "p95Ms": 2.565199851989746,
+        "gpuMs": -1.0,
+        "frames": 4173,
+        "gpuValidSamples": 3257,
+        "gpuInvalidSamples": 1
+      }
+    ],
+    "errors": []
+  }
+}

@@ -2,6 +2,7 @@
 
 Unity 6000.3.23f1 · URP / Shader Graph 17.3.0용 CRT 효과.
 RGB 발광 패턴, 주사선, 픽셀화, 곡면 왜곡, 비네트와 흑백·단색 모노를 제공한다.
+감시실 데모의 CRT 스피커 음색을 조절하는 Audio Lab과 발소리·채널 전환 사운드도 포함한다.
 
 ## 제작법
 
@@ -56,10 +57,49 @@ RGB 발광 패턴, 주사선, 픽셀화, 곡면 왜곡, 비네트와 흑백·단
 
 ### 데모
 
+병원 CCTV를 CRT로 관찰하는 별도 씬은 [감시실 데모](Surveillance/README.md)를 참고한다.
+
 1. `CRTPlayground`에서 Play를 누르고 전체 비교 / 전체 화면 / 3D / 2D / Canvas 모드를 선택한다.
 2. 원본 비교, 정지 이미지·동영상, UI 포함, 부분 UV, 영상 일시정지를 버튼으로 전환한다.
 3. COLOR / MONO / GREEN / AMBER로 프리셋을 선택하고 왼쪽 슬라이더를 조절한다. 아래 설정은 스크롤해서 확인한다.
 4. **REAPPLY**로 선택한 프리셋 값을 다시 불러온다. 데모 조절은 임시 복사본에만 적용되며 에셋에 저장되지 않는다.
+
+## 사운드
+
+### CRT 스피커 음색 조절
+
+`Tools > CRT > Audio Preview`에서 **CRT Audio Lab**을 연다. AudioClip을 넣고 Play 모드에 들어가지 않아도 원본과 CRT 음색을 같은 재생 위치에서 비교할 수 있다.
+창은 마지막으로 실제 재생한 클립을 복원하며, 기록이 없으면 빈 상태로 시작한다. `A 발소리 불러오기`로 승인한 실녹음 예시를 선택할 수 있다.
+
+| 조절 | 동작 |
+|---|---|
+| 음색 강도 | −100~+100으로 전체 음색을 조절한다. **중앙 0은 기본 CRT 음색**이다. |
+| 자세히 조절하기 | 간편 슬라이더를 비활성화하고 효과 혼합·저음 제거·고음 제한·찌그러짐·잡음을 개별 조절한다. |
+| 출력 볼륨·피크 보호 | 출력 볼륨은 −40~+12dB. 음색 강도나 간편/상세 모드 전환과 독립적으로 유지된다. |
+| 원본 듣기 / CRT 효과 듣기 | 재생 위치를 유지하며 비교한다. 원본 비교 상태는 설정 에셋에 저장하지 않는다. |
+
+1. `오디오 클립`에 미리 들을 클립을 넣고 재생한다.
+2. 감시실 음색을 바꾸려면 `설정 에셋`에 [DefaultCRT.asset](AudioPreview/Presets/DefaultCRT.asset)을 선택한다.
+3. 음색과 출력 볼륨을 조절하고 **설정 에셋에 저장**을 누른다. 새 프리셋은 **새 설정 에셋 저장…**으로 만든다.
+4. 새 프리셋을 사용하려면 감시실의 `CRT Monitor > CCTV Footstep Speaker`에서 `SurveillanceFootstepAudio.preset`에 연결한다.
+
+저장 형식은 `.asset`이며 사용자용 WAV 저장 기능은 제공하지 않는다. 에셋에는 효과·볼륨·피크 보호·조절 모드가 저장되고, 미리듣기 클립과 재생 위치는 포함되지 않는다.
+오디오 프리셋은 영상용 `CrtProfile`과 별개이며 다른 클립에도 재사용할 수 있다. 상세 조절과 복원 규칙은 [Audio Lab 사용 안내](AudioPreview/README.md)를 참고한다.
+
+### 감시실에서 들리는 소리
+
+| 소리 | 재생 방식 |
+|---|---|
+| 더미 발소리 | 승인한 A 실녹음의 왼발·오른발 각 3가지 음원을 실제 이동 거리 약 0.58m마다 번갈아 재생한다. 대기·정체 중에는 새 발소리를 내지 않는다. |
+| CRT 음색 | 저장한 오디오 프리셋으로 발소리의 음역·찌그러짐·잡음을 처리한다. Play 중 프리셋을 저장하면 약 0.5초 간격으로 감지해 이후 발걸음에 적용한다. |
+| CCTV 거리감 | 현재 표시 중인 카메라와 더미 사이의 거리, 플레이어와 CRT 사이의 거리에 따라 소리 크기가 달라진다. |
+| 채널 전환 | 전환 시작에 약 0.2초 치지직 소리를 별도 AudioSource에서 재생한다. 전환 중 추가 입력은 무시해 소리가 겹치지 않는다. |
+
+Audio Lab은 선택한 클립의 데이터를 임시 클립에서 처리한다. 감시실에서는 CRT 전용 AudioSource의 발소리에 적용하며, 원본 AudioClip과 AudioListener 전체를 변경하지 않는다. 채널 전환 소리에는 발소리 프리셋을 적용하지 않는다.
+**감시실의 C 키와 CRT / ORIGINAL 버튼은 영상만 비교한다.** 발소리의 원본/효과 비교는 Audio Lab에서 한다. Audio Lab에서 저장하지 않은 편집 값은 감시실에 반영되지 않는다.
+
+연결·실행 방법은 [감시실 안내](Surveillance/README.md), 승인 음원과 제작 출처는 [발소리 비교 기록](../../AudioPreviews/CRT_Footsteps/README.md)에 정리했다.
+검증 결과는 [Audio Lab 검증](AudioPreview/VALIDATION.md)과 [CRT 발소리 연결 검증](Surveillance/VALIDATION-AUDIO.md)을 참고한다.
 
 ## 도구 설명
 
@@ -71,6 +111,10 @@ RGB 발광 패턴, 주사선, 픽셀화, 곡면 왜곡, 비네트와 흑백·단
 | Rebuild Shader Graphs | 네 출력 그래프와 공통 Sub Graph 재생성. |
 | Create Missing Profiles | 없는 Classic·Monochrome·Green·Amber 기본 프로필 생성. |
 | Profile Preview | Play 없이 프로필 편집과 이미지 미리보기. |
+| Audio Preview | AudioClip 원본/CRT 비교, 간편·상세 음색 조절, 설정 에셋 저장. |
+| Validate Audio Preview | 오디오 DSP와 실제 Editor 미리듣기 재생 검사. |
+| Validate Audio Controls | 간편·상세 전환, 설정 저장, 마지막 클립 복원 검사. |
+| Surveillance > Apply CRT Footstep Audio | 기존 감시실 배치를 유지하면서 CRT 발소리 참조 설치·갱신. |
 | Validate Assets | 현재 CRT 에셋 구성 검사. |
 | Build Windows Preview | 데모를 `Build/CRT/CRTPreview.exe`로 빌드. |
 
