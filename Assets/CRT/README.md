@@ -58,6 +58,7 @@ RGB 발광 패턴, 주사선, 픽셀화, 곡면 왜곡, 비네트와 흑백·단
 ### 데모
 
 병원 CCTV를 CRT로 관찰하는 별도 씬은 [감시실 데모](Surveillance/README.md)를 참고한다.
+감시실을 처음 실행할 때는 병원·CRT·방 모델을 직접 다운로드하고 Cinemachine 샘플을 임포트해야 한다. [외부 에셋 설치 순서](Surveillance/README.md#외부-에셋-설치)를 먼저 완료한다. 이 외부 자료는 아래 `CRTPlayground`와 Audio Lab만 사용할 때는 필요하지 않다.
 
 1. `CRTPlayground`에서 Play를 누르고 전체 비교 / 전체 화면 / 3D / 2D / Canvas 모드를 선택한다.
 2. 원본 비교, 정지 이미지·동영상, UI 포함, 부분 UV, 영상 일시정지를 버튼으로 전환한다.

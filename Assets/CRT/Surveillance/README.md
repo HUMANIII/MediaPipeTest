@@ -1,8 +1,43 @@
 # CRT 감시실 데모
 
-`Scenes/SurveillanceDemo.unity`를 열고 Play한다. 병원 안의 흰색 더미를 감시실 CRT 한 대로 관찰하는 데모다.
+병원 안의 흰색 더미를 감시실 CRT 한 대로 관찰하는 데모다. 처음 실행할 때는 [외부 에셋 설치](#외부-에셋-설치)를 완료한 뒤 `Scenes/SurveillanceDemo.unity`를 열고 Play한다.
 씬의 병원·감시실·가구·카메라·착석 지점·참조는 모두 저장되어 있으며 Inspector에서 직접 수정할 수 있다.
 Editor에서는 Game 뷰를 클릭해 입력 포커스를 준 뒤 조작한다.
+
+## 외부 에셋 설치
+
+Unity **6000.3.23f1** 기준이다. Cinemachine **3.1.7**, Input System **1.20.0**, URP / Shader Graph **17.3.0**은 프로젝트의 `Packages/manifest.json`으로 복원된다. 아래 모델 팩과 Cinemachine 샘플은 별도로 준비해야 한다.
+
+### 다운로드할 자료
+
+| 자료·다운로드 링크 | 사용할 파일·버전 | 임포트 후 확인할 경로 |
+|---|---|---|
+| [PBR - Hospital Horror Pack. Free](https://assetstore.unity.com/packages/3d/environments/pbr-hospital-horror-pack-free-80117) · DNK_DEV | 버전 **1.2**, Package Manager의 **My Assets**에서 Download → Import | `Assets/Dnk_Dev/HospitalHorrorPack/Map_Hosp1.unity` |
+| [CRT TV and Remote Models](https://nailfighter.itch.io/crt-tv-and-remote-models) · Nailfighter | **Complete CRT TV Set** ZIP의 Models·Texture 폴더 | `Assets/CRT/Resource/Complete CRT TV Set/Models/CRT TV.fbx` |
+| [Abandoned Room – Free Horror Asset Pack](https://blackgearstudio.itch.io/abandoned-room-free-horror-asset-pack) · BlackGearStudio | 무료 **HorrorPackFBX.zip**. 유료 `.blend` 소스는 필요하지 않다. | `Assets/CRT/Resource/HorrorPackFBX/HorrorPackFBX/Floor_1.fbx` 및 `Assets/CRT/Resource/HorrorPackFBX/Textures/` |
+| Cinemachine **3D Samples** | Package Manager → Cinemachine **3.1.7** → Samples → **3D Samples** → Import | `Assets/Samples/Cinemachine/3.1.7/Shared Assets/Cameron/Animations/Cameron@Idle.fbx` 및 `Cameron@Walk.fbx` |
+
+병원·CRT·방 모델 원본과 `Assets/Samples/`는 현재 저장소에 포함되어 있지 않다. Package Manager 창에서 가져오는 병원 팩도 `.unitypackage` 형식이므로 `manifest.json`만으로 다시 임포트되지 않는다.
+흰색 더미는 기존 저장소의 `Assets/Kevin Iglesias/Human Character Dummy/Prefabs/HumanDummy_M White.prefab`을 사용하므로 별도 다운로드하지 않는다.
+
+### 설치와 첫 실행
+
+1. 프로젝트를 열고 UPM 패키지 복원과 컴파일이 끝날 때까지 기다린다. 감시실 씬이 열려 있다면 다른 씬으로 전환해 닫는다.
+2. 병원 팩을 My Assets에 추가한 계정으로 로그인하고 **Download → Import**한다. 팩의 기본 `Assets/Dnk_Dev/HospitalHorrorPack/` 경로를 유지한다.
+3. CRT ZIP을 풀어 `Complete CRT TV Set` 폴더를 `Assets/CRT/Resource/` 아래에 넣는다. 방 ZIP은 `Assets/CRT/Resource/HorrorPackFBX/` 아래에 풀어 위 표의 모델·텍스처 경로와 일치시킨다. ZIP 이름의 폴더가 불필요하게 한 겹 더 생기지 않았는지 확인한다.
+4. Cinemachine **3D Samples**를 임포트하고, 의존성 안내가 나오면 함께 가져온다. `Shared Assets`도 복사되며 위 표의 Cameron Idle·Walk 파일이 있어야 한다. Cinemachine 패키지만 설치한 상태로는 이 단계가 완료되지 않는다.
+5. 새로 내려받은 ZIP에는 `.meta`가 없어 Unity가 새 GUID를 만든다. 같은 경로에 파일을 넣어도 저장된 씬의 이전 참조가 자동 복구되지는 않으므로 **Tools > CRT > Surveillance > Create or Rebuild Demo**를 실행한다. 생성기가 현재 파일 경로로 모델·텍스처를 다시 연결하고 프리팹·NavMesh·씬을 저장한다.
+6. **Tools > CRT > Surveillance > Validate Saved Demo**로 저장된 구성을 확인한 뒤 `Assets/CRT/Surveillance/Scenes/SurveillanceDemo.unity`를 열고 Play한다. 병원과 CRT 영상, 더미의 걷기·대기, 발소리를 확인한다.
+
+**Create or Rebuild Demo는 감시실 씬·프리팹·프로필 등의 생성물을 초기 구성으로 덮어쓴다.** 이미 배치나 설정을 편집했다면 재생성 전에 별도로 보존한다. 기존 에셋을 다른 위치로 옮길 때는 Unity Project 창을 사용하거나 `.meta`를 함께 옮긴다.
+
+### 누락된 참조가 남을 때
+
+- 모델이나 텍스처가 없으면 위 표의 경로와 ZIP 폴더 중첩을 먼저 확인한다. 재생성 시 방·CRT 머티리얼의 텍스처도 다시 연결된다.
+- 더미가 움직여도 걷기 자세가 나오지 않으면 Cameron 샘플 버전과 Idle·Walk 파일을 확인한다. 기존 `Animation/DummyLocomotion.controller`는 재생성 시 유지되므로, Animator의 `Locomotion` Blend Tree에 두 클립이 연결되어 있는지도 확인한다.
+- 이 안내는 현재 파일·패키지 구성과 생성 코드를 기준으로 작성했다. 외부 에셋이 없는 새 PC에서의 전체 복원 실행은 별도로 검증해야 한다.
+
+## 조작
 
 | 상태 | 조작 | 동작 |
 |---|---|---|
