@@ -1,0 +1,42 @@
+{
+  "upright": {
+    "deltaSeconds": 0.2,
+    "screenDownPixels": 30,
+    "screenRightPixels": -2,
+    "correlation": 0.5904442667961121,
+    "passed": true
+  },
+  "characterTilt25Degrees": {
+    "deltaSeconds": 0.2,
+    "screenDownPixels": 26,
+    "screenRightPixels": 2,
+    "correlation": 0.5216888785362244,
+    "passed": true
+  },
+  "surfaceDepthIndependence": {
+    "meanPixelDifference": 0.06671813875436783,
+    "pixelsOver8": 60,
+    "passed": true
+  },
+  "density-zero.png": {
+    "maxPixelDifference": 0.0,
+    "passed": true
+  },
+  "strength-zero-glow-one.png": {
+    "maxPixelDifference": 0.0,
+    "passed": true
+  },
+  "face": {
+    "maxPixelDifference": 0.0,
+    "passed": true
+  },
+  "outfit": {
+    "maxPixelDifference": 0.0,
+    "passed": true
+  },
+  "protectedFiles": {
+    "unchanged": 178,
+    "changed": [],
+    "passed": true
+  }
+}

@@ -2,6 +2,18 @@
 
 변신 연출 데모는 Henshin.unity를 통해 확인 가능합니다.
 
+## 머리카락 벚꽃 데모
+
+Henshin 캐릭터의 갈색 머릿결을 유지하면서, 머리카락 안의 별도 공간에서 꽃잎이 떨어지는 전용 데모입니다. 꽃잎마다 깊이·속도·회전이 다르며, 머리 표면의 굴곡을 따라 휘지 않고 월드 아래 방향 `(0, -1, 0)`으로 움직입니다. 효과는 `Hair1`에만 적용됩니다.
+
+[SakuraHairDemo.unity](Assets/06.Scenes/SakuraHairDemo.unity)를 열고 **Play**를 누르면 바로 재생됩니다. [SakuraHair 머티리얼](Assets/SakuraHairDemo/Materials/SakuraHair.mat)에서 강도·색·크기·밀도·속도·흔들림·발광·내부 깊이를 조절합니다. `Effect Strength`를 0으로 설정하면 효과를 끈 상태를 비교할 수 있습니다.
+
+- [구현 과정·구조·조절 항목](Assets/SakuraHairDemo/README.md)
+- [최신 6초 재생 영상](Captures/SakuraHairDemo/InteriorFall/SakuraHairInteriorFall.mp4) · [효과 끄기](Captures/SakuraHairDemo/InteriorFall/front-off.png) / [켜기](Captures/SakuraHairDemo/InteriorFall/front-on.png)
+- [Unity 실행·표면 독립성·원본 보존 검증 결과](Captures/SakuraHairDemo/InteriorFall/README.md)
+
+원본 Henshin 씬·캐릭터 프리팹·공유 머티리얼은 보존했습니다. 공간으로 방출되는 파티클, 디졸브와 변신 연동은 포함하지 않습니다.
+
 ## CRT 감시실 실행 준비
 
 감시실 데모를 처음 실행할 때는 아래 외부 에셋을 직접 다운로드하고 임포트해야 합니다. 모델 원본은 저장소에 포함되어 있지 않으며, 프로젝트를 여는 것만으로 자동 복원되지 않습니다.

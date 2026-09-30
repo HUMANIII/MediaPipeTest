@@ -1,0 +1,100 @@
+{
+  "unity": "6000.3.23f1",
+  "scene": "Assets/06.Scenes/SakuraHairDemo.unity",
+  "hair": "Hair1",
+  "sourceHairMaterial": "Assets/AnimeGirls/BaseCharacter/BaseCharacter/Sourcefiles/Mat/Mat_Hair_1_hair.mat",
+  "sourceHairShader": "Unlit/Texture",
+  "sourceHairTexture": "Assets/AnimeGirls/BaseCharacter/BaseCharacter/Sourcefiles/Tex/Tex_Hair1_hair.png",
+  "bounds": {
+    "center": "(-2.5798, 1.4157, -8.2502)",
+    "size": "(0.2302, 0.4018, 0.3116)"
+  },
+  "activeRenderers": [
+    {
+      "name": "Base_bikini",
+      "materials": [
+        {
+          "material": "Bikini",
+          "shader": "Shader Graphs/UnlitPopableShader",
+          "path": "Assets/01.Resource/Bikini.mat"
+        }
+      ]
+    },
+    {
+      "name": "Base_Body",
+      "materials": [
+        {
+          "material": "mouth_inside",
+          "shader": "Unlit/Texture",
+          "path": "Assets/AnimeGirls/BaseCharacter/BaseCharacter/Sourcefiles/Mat/mouth_inside.mat"
+        },
+        {
+          "material": "Eye_reflection",
+          "shader": "Unlit/Texture",
+          "path": "Assets/AnimeGirls/BaseCharacter/BaseCharacter/Sourcefiles/Mat/Eye_reflection.mat"
+        },
+        {
+          "material": "Eyeliner",
+          "shader": "Universal Render Pipeline/Lit",
+          "path": "Assets/AnimeGirls/BaseCharacter/BaseCharacter/Sourcefiles/Mat/Eyeliner.mat"
+        },
+        {
+          "material": "Eyelashes",
+          "shader": "Universal Render Pipeline/Lit",
+          "path": "Assets/AnimeGirls/BaseCharacter/BaseCharacter/Sourcefiles/Mat/Eyelashes.mat"
+        },
+        {
+          "material": "Eyebrows",
+          "shader": "Universal Render Pipeline/Lit",
+          "path": "Assets/AnimeGirls/BaseCharacter/BaseCharacter/Sourcefiles/Mat/Eyebrows.mat"
+        },
+        {
+          "material": "EyeBack",
+          "shader": "Unlit/Texture",
+          "path": "Assets/AnimeGirls/BaseCharacter/BaseCharacter/Sourcefiles/Mat/EyeBack.mat"
+        },
+        {
+          "material": "Eye",
+          "shader": "Unlit/Texture",
+          "path": "Assets/AnimeGirls/BaseCharacter/BaseCharacter/Sourcefiles/Mat/Eye.mat"
+        },
+        {
+          "material": "Face",
+          "shader": "Unlit/Texture",
+          "path": "Assets/AnimeGirls/BaseCharacter/BaseCharacter/Sourcefiles/Mat/Face.mat"
+        },
+        {
+          "material": "Body",
+          "shader": "Unlit/Texture",
+          "path": "Assets/AnimeGirls/BaseCharacter/BaseCharacter/Sourcefiles/Mat/Body.mat"
+        },
+        {
+          "material": "Hair_head",
+          "shader": "Unlit/Texture",
+          "path": "Assets/AnimeGirls/BaseCharacter/BaseCharacter/Sourcefiles/Mat/Hair_head.mat"
+        }
+      ]
+    },
+    {
+      "name": "Base_underwear",
+      "materials": [
+        {
+          "material": "Bikini",
+          "shader": "Shader Graphs/UnlitPopableShader",
+          "path": "Assets/01.Resource/Bikini.mat"
+        }
+      ]
+    },
+    {
+      "name": "Hair1",
+      "materials": [
+        {
+          "material": "SakuraHair",
+          "shader": "Sakura Hair/SakuraHair",
+          "path": "Assets/SakuraHairDemo/Materials/SakuraHair.mat"
+        }
+      ]
+    }
+  ],
+  "shaderMessages": []
+}

@@ -1,0 +1,45 @@
+{
+  "success": true,
+  "unity": "6000.3.23f1",
+  "graphics": "NVIDIA GeForce RTX 3070 Ti",
+  "isPlaying": true,
+  "frames": 180,
+  "fps": 30,
+  "duration": 6,
+  "effectStrength": 0.78,
+  "checkpoints": [
+    {
+      "frame": 0,
+      "time": 0.25333333,
+      "realtime": 8.269757,
+      "playMode": true
+    },
+    {
+      "frame": 60,
+      "time": 2.25333333,
+      "realtime": 12.0582476,
+      "playMode": true
+    },
+    {
+      "frame": 179,
+      "time": 6.22,
+      "realtime": 19.5320721,
+      "playMode": true
+    }
+  ],
+  "errors": [],
+  "shaderMessages": [],
+  "flowWorld": "(0.00, -1.00, 0.00, 0.00)",
+  "speedMetersPerSecond": 0.065,
+  "worldTiling": 26.0,
+  "mode": "Independent virtual 3D billboards inside the hair silhouette",
+  "interiorDepth": 1.0,
+  "depthFade": 0.65,
+  "volumeCenterWS": "(-2.57979, 1.41571, -8.25022, 0.00000)",
+  "volumeExtentsWS": "(0.11510, 0.20091, 0.15582, 0.00000)",
+  "tiltedCharacterDegrees": 25,
+  "scene": "Assets/06.Scenes/SakuraHairDemo.unity",
+  "material": "Assets/SakuraHairDemo/Materials/SakuraHair.mat",
+  "particleSystems": 0,
+  "invokers": 0
+}

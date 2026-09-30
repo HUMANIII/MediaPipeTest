@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "scene": "Assets/06.Scenes/SakuraHairDemo.unity",
+  "shader": "Sakura Hair/SakuraHair",
+  "shaderMessages": [],
+  "settings": {
+    "_EffectStrength": 0.78,
+    "_PetalSize": 0.64,
+    "_Density": 0.7,
+    "_Speed": 0.065,
+    "_Flutter": 0.75,
+    "_Glow": 0.08,
+    "_WorldTiling": 26.0,
+    "_InteriorDepth": 1.0,
+    "_DepthFade": 0.65,
+    "_VolumeCenterWS": "(-2.57979, 1.41571, -8.25022, 0.00000)",
+    "_VolumeExtentsWS": "(0.11510, 0.20091, 0.15582, 0.00000)",
+    "_FlowDirection": [
+      0.0,
+      -1.0,
+      0.0
+    ],
+    "_BaseMap": "Assets/AnimeGirls/BaseCharacter/BaseCharacter/Sourcefiles/Tex/Tex_Hair1_hair.png",
+    "_PetalMap": "Assets/SakuraHairDemo/Textures/SakuraPetal_BaseColor.png",
+    "_PetalMask": "Assets/SakuraHairDemo/Textures/SakuraPetal_Mask.png"
+  },
+  "customFunctionGuid": "8d2061d6d43498f4a974269eb9b98fc5"
+}

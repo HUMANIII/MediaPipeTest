@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8185379484067828303
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.Rendering.Universal.AssetVersion
+  version: 10
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SakuraHair
+  m_Shader: {fileID: -6465566751694194690, guid: 2d47cb4fcc58f0541a0cc159e81cf788, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: 6d19fd0a3cb6d884b9486bc2c75bc7f0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PetalMap:
+        m_Texture: {fileID: 2800000, guid: 348ee7fd37011e3408dc0dd037f8a423, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PetalMask:
+        m_Texture: {fileID: 2800000, guid: 0fb5677d69fd5894fa90eca55eb4b903, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Density: 0.7
+    - _DepthFade: 0.65
+    - _EffectStrength: 0.78
+    - _Flutter: 0.75
+    - _Glow: 0.08
+    - _InteriorDepth: 1
+    - _PetalSize: 0.64
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _Speed: 0.065
+    - _WorldTiling: 26
+    m_Colors:
+    - _BaseTint: {r: 1, g: 1, b: 1, a: 1}
+    - _FlowDirection: {r: 0, g: -1, b: 0, a: 0}
+    - _PetalTint: {r: 1, g: 0.9, b: 0.95, a: 1}
+    - _VolumeCenterOS: {r: -0.0000016812701, g: 0.0040673576, b: 0.000064799446, a: 0}
+    - _VolumeCenterWS: {r: -2.5797875, g: 1.4157068, b: -8.250218, a: 0}
+    - _VolumeExtentsOS: {r: 0.0011510217, g: 0.0018799584, b: 0.00137556, a: 0}
+    - _VolumeExtentsWS: {r: 0.1151022, g: 0.20091374, b: 0.15581976, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

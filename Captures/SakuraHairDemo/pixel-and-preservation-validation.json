@@ -1,0 +1,34 @@
+{
+  "effect_on_off": {
+    "changed_pixels": 17926,
+    "max_channel_difference": 206,
+    "mean_absolute_difference": 0.8140732828776042
+  },
+  "motion_after_two_seconds": {
+    "changed_pixels": 33148,
+    "max_channel_difference": 206,
+    "mean_absolute_difference": 1.475104777018229
+  },
+  "density_zero_matches_effect_off": {
+    "changed_pixels": 0,
+    "max_channel_difference": 0,
+    "mean_absolute_difference": 0.0
+  },
+  "strength_zero_disables_glow": {
+    "changed_pixels": 0,
+    "max_channel_difference": 0,
+    "mean_absolute_difference": 0.0
+  },
+  "face_region_unchanged": {
+    "changed_pixels": 0,
+    "max_channel_difference": 0,
+    "mean_absolute_difference": 0.0
+  },
+  "outfit_region_unchanged": {
+    "changed_pixels": 0,
+    "max_channel_difference": 0,
+    "mean_absolute_difference": 0.0
+  },
+  "protected_files_checked": 178,
+  "protected_files_changed": []
+}
